@@ -2,7 +2,7 @@
 layout: default
 title: Not Even Wong - an amateur data analysis repository
 ---
-<div class="blurb">
+<div>
 	<p>I'm a physicist, musician, and educator by training, and I enjoy seeing numbers jump through hoops. I'll be updating my personal research projects here as time goes by.</p>
         <p>My personal interests lie in the following fields:</p>
         <ul>
@@ -11,11 +11,12 @@ title: Not Even Wong - an amateur data analysis repository
         <li>Understanding the role of human cognition in learning and understanding</li>
         <li>Analysis of various artistic and creative endeavours through an interdisciplinary lens</li>
         </ul>
-</div><!-- /.blurb -->
-
-<ul class="posts">
+	<p></p>	
 	<p>Projects:</p>
 	{% for post in site.posts %}
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	{% endfor %}
+</div>
+
+<ul class="posts">
 </ul>
