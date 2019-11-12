@@ -29,7 +29,7 @@ This yielded something in the range of 54 thousand recipes in around 180 subcate
 
 <div class="fineprint">Later analysis demonstrated that this data needed a large amount of cleaning. Over the course of this project, I removed a lot of irrelevant terms, as well as standardised some wording. For example, alternate methods of spelling, use of "chili" vs "chilli", replacing abbreviations such as "tsp" to "teaspoon", and so on. It took many iterations of cleaning before I started to get decent results.</div>
 
-Well, here's where the fun begins. I started off by performing k-means clustering on the text of each individual recipe. Quickly scanning through these recipes suggested that the clusters are reasonably accurate. I then clustered categories of recipes based on the number of constitutent individual recipes in each cluster. This also gave me reasonable results, but the approach seemed questionable.
+Well, here's where the fun begins. I started off by performing k-means clustering on the text of each individual recipe. Quickly scanning through these recipes suggested that the clusters are reasonably accurate. I then clustered categories of recipes based on the number of constituent individual recipes in each cluster. This also gave me reasonable results, but the approach seemed questionable.
 
 After that, I decided to aggregate all recipes in each category into a single document. That reduced the number of documents from ~54000 to ~180. I then used heirarchical clustering on the tf-idf scores of each document, with the aim of determining which categories of recipes were closest to each other.
 
@@ -47,4 +47,6 @@ Well, those clusters seem to make sense. However, I have no clue as to exactly <
 
 So I went on to make use of topic modeling using the Gensim library. <a href="https://not-even-wong.github.io/2019/11/10/layman-intro-topic-modeling.html">I wrote a very quick layman primer to it here</a>.
 
-After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise
+After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise these topics:
+
+ <iframe src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/lda35.html"></iframe> 
