@@ -22,7 +22,7 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #ff99cc;
 }
 a:hover {
     text-decoration: underline;
@@ -41,7 +41,7 @@ p {
     font-style: italic; 
     font-size: 1.0em;
     line-height: 1.4em;
-    color: #888;
+    color: #99e6ff;
 }
 ul { 
     font-size: 1.1em;
