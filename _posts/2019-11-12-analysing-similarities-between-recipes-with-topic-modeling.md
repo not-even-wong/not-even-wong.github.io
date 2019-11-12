@@ -34,13 +34,6 @@ After that, I decided to aggregate all recipes in each category into a single do
 
 This was the result of my clustering:
 
-<table>
-    <thead>
-        <tr>
-            <th>Heirarchical clustering using tf-idf scores</th>
-        </tr>            
-    </thead>
-    <tbody>
-        <tr><td><img src="2019-11-12/2019-11-12 heirarchy of recipes tfidf.png"></td></tr>
-    </tbody>        
-</table>
+<iframe width="500" height="400" src="2019-11-12/2019-11-12 heirarchy of recipes tfidf.png" frameborder="0"></iframe> 
+
+
