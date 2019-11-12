@@ -18,7 +18,7 @@ So I started my project by searching for a database of recipes that are convenie
 
 Well, that's perfect! Every recipe here is already in text form, and categorised either by country of origin or type of food! 
 
-<i>Note: we've to be careful about the validity of the labels here. This website is run by a team of volunteers and recipes can be submitted to the database; these labels may be influenced by their cultural backgrounds and awarenesses. Still, it's an impressive collection and the recipes, as far as I can tell, are reasonably accurately cataloged</i>
+<div style=fineprint>Note: we've to be careful about the validity of the labels here. This website is run by a team of volunteers and recipes can be submitted to the database; these labels may be influenced by their cultural backgrounds and awarenesses. Still, it's an impressive collection and the recipes, as far as I can tell, are reasonably accurately cataloged</div>
 
 I wrote a quick script in Python to generate a list of all links to recipes or categories from the main page, and iteratively go to each page to either download the recipe there, or generate a new list of links on that subpage. By the end of it, I had saved a csv file with one entry for each page containing the URL of that page, and the text of the page.
 
@@ -34,7 +34,8 @@ After that, I decided to aggregate all recipes in each category into a single do
 
 This was the result of my clustering:
 
-<div style="height: 400px; width: auto; border: 1px solid #ccc; overflow:scroll;">
+<div style="height: 400px; width: 497px; border: 1px solid #ccc; overflow:scroll;">
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20tfidf.png">
 </div>
 
+Well, those clusters seem to make sense.
