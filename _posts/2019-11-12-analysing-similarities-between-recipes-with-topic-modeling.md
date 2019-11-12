@@ -35,6 +35,6 @@ After that, I decided to aggregate all recipes in each category into a single do
 This was the result of my clustering:
 
 <div style="height: 400px; width: auto; border: 1px solid #ccc; overflow:scroll;">
-<img src="20191112/heirarchy of recipes tfidf.png">
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20tfidf.png">
 </div>
 
