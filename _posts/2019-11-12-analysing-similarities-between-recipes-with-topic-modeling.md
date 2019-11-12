@@ -3,6 +3,7 @@ layout: post
 title: "Analysing similarities between recipes with topic modeling"
 date: 2019-11-12
 ---
+<i>The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></i>
 
 I'm a Singaporean, which means that appreciating the vast diversity of food is a way of life for me. Growing up in a melting pot of cultures and travelling overseas to savour the taste of various local delicacies does that for you.
 
@@ -18,7 +19,7 @@ So I started my project by searching for a database of recipes that are convenie
 
 Well, that's perfect! Every recipe here is already in text form, and categorised either by country of origin or type of food! 
 
-<div style=fineprint>Note: we've to be careful about the validity of the labels here. This website is run by a team of volunteers and recipes can be submitted to the database; these labels may be influenced by their cultural backgrounds and awarenesses. Still, it's an impressive collection and the recipes, as far as I can tell, are reasonably accurately cataloged</div>
+<div class="fineprint">Note: we've to be careful about the validity of the labels here. This website is run by a team of volunteers and recipes can be submitted to the database; these labels may be influenced by their cultural backgrounds and awarenesses. Still, it's an impressive collection and the recipes, as far as I can tell, are reasonably accurately cataloged</div>
 
 I wrote a quick script in Python to generate a list of all links to recipes or categories from the main page, and iteratively go to each page to either download the recipe there, or generate a new list of links on that subpage. By the end of it, I had saved a csv file with one entry for each page containing the URL of that page, and the text of the page.
 
@@ -26,16 +27,24 @@ The reason why I chose to save the URL is twofold: firstly, it lets me know wher
 
 This yielded something in the range of 54 thousand recipes in around 180 subcategories.
 
-<i>Later analysis demonstrated that this data needed a large amount of cleaning. Over the course of this project, I removed a lot of irrelevant terms, as well as standardised some wording. For example, alternate methods of spelling, use of "chili" vs "chilli", replacing abbreviations such as "tsp" to "teaspoon", and so on. It took many iterations of cleaning before I started to get decent results.</i>
+<div class="fineprint">Later analysis demonstrated that this data needed a large amount of cleaning. Over the course of this project, I removed a lot of irrelevant terms, as well as standardised some wording. For example, alternate methods of spelling, use of "chili" vs "chilli", replacing abbreviations such as "tsp" to "teaspoon", and so on. It took many iterations of cleaning before I started to get decent results.</div>
 
 Well, here's where the fun begins. I started off by performing k-means clustering on the text of each individual recipe. Quickly scanning through these recipes suggested that the clusters are reasonably accurate. I then clustered categories of recipes based on the number of constitutent individual recipes in each cluster. This also gave me reasonable results, but the approach seemed questionable.
 
 After that, I decided to aggregate all recipes in each category into a single document. That reduced the number of documents from ~54000 to ~180. I then used heirarchical clustering on the tf-idf scores of each document, with the aim of determining which categories of recipes were closest to each other.
 
-This was the result of my clustering:
+<div class="fineprint">(tf-idf stands for "term frequency, inverse document frequency". It means that for each word, you count how many times it appears in that particular document, then reduce that amount based on how many documents it appears in. It's a way of reducing the impact of words that appear in too many documents, so your data focuses on words that are unique to a particular document.)</div>
+
+This was the result of my heirarchical clustering:
 
 <div style="height: 400px; width: 510px; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20tfidf.png">
 </div>
 
-Well, those clusters seem to make sense.
+<div class="fineprint">Note: I used sklearn TfidfVectorizer for the text data vectorization, and scipy for clustering. My maximum and minimum document frequency thresholds were 0.9 and 0.001 respectively.</div>
+
+Well, those clusters seem to make sense. However, I have no clue as to exactly <i>why</i> those categories are clustered together.
+
+So I went on to make use of topic modeling using the Gensim library. <a href="https://not-even-wong.github.io/2019/11/10/layman-intro-topic-modeling.html">I wrote a very quick layman primer to it here</a>.
+
+After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise
