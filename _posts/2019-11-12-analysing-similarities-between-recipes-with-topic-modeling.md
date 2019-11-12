@@ -55,6 +55,8 @@ After some experimenting to decide the number of topics, I settled on 35 topics:
 
 I set λ = 0.6 for a good balance between term frequency and uniqueness, and used that to assign labels to each topic:
 
+<div class="fineprint">Note that the terms obtained from the LDA model have been lemmatized; I've replaced the missing letters in brackets, e.g. juic -> juic(e)</div>
+
 <div style="height: 600px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Topic</th>
@@ -274,3 +276,7 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 </tr>
 </tbody></table>
 </div>
+
+Now that I have a list of topics
+
+I then used gensim's LDA model to assign weights for each topic 
