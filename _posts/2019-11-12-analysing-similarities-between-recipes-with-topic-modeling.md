@@ -57,7 +57,7 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 
 <div class="fineprint">Note that the terms obtained from the LDA model have been lemmatized; I've replaced the missing letters in brackets, e.g. juic -> juic(e)</div>
 
-<div style="height: 600px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<div style="height: 60%; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Topic</th>
 <th title="Field #2">Proposed label</th>
@@ -277,6 +277,4 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 </tbody></table>
 </div>
 
-Now that I have a list of topics
-
-I then used gensim's LDA model to assign weights for each topic 
+Now that I have a list of topics, I can use these to make sense of clustering. As with my earlier attempt, I merged all documents within each category of recipes into a single long document. I then used gensim's LDA model to assign weights for each topic for each document. The result is as shown:
