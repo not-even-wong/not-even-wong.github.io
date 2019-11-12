@@ -34,6 +34,7 @@ After that, I decided to aggregate all recipes in each category into a single do
 
 This was the result of my clustering:
 
-<iframe width="500" height="400" src="2019-11-12/2019-11-12 heirarchy of recipes tfidf.png" frameborder="0"></iframe> 
-
+<div style="height:400px;width:500px;border:1px solid #ccc;overflow:auto;">
+<img src="2019-11-12/2019-11-12 heirarchy of recipes tfidf.png">
+</div>
 
