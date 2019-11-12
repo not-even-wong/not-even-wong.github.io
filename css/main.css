@@ -36,7 +36,12 @@ p {
     line-height: 1.4em;
     color: #333;
 }
-
+fineprint {
+    font-style: italic; 
+    font-size: 1.0em;
+    line-height: 1.4em;
+    color: #666;
+}
 ul { 
     font-size: 1.1em;
     line-height: 1.3em;
