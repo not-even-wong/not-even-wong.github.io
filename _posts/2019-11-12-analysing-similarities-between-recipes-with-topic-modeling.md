@@ -41,6 +41,6 @@ This was the result of my clustering:
         </tr>            
     </thead>
     <tbody>
-        <tr><td><img src="/2019-11-12/2019-11-12 heirarchy of recipes tfidf.png"></td></tr>
+        <tr><td><img src="2019-11-12/2019-11-12 heirarchy of recipes tfidf.png"></td></tr>
     </tbody>        
 </table>
