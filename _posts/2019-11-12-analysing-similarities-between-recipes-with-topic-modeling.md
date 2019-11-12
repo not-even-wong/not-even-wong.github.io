@@ -49,6 +49,7 @@ So I went on to make use of topic modeling using the Gensim library. <a href="ht
 
 After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise these topics:
 
+<iframe src="https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/pyLDAvis%20visual%20for%20upload.ipynb"></iframe>
 
 <a href="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/lda35.html">(you can download this visualisation here)</a>
 
