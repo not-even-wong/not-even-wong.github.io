@@ -55,6 +55,7 @@ After some experimenting to decide the number of topics, I settled on 35 topics:
 
 I set λ = 0.6 for a good balance between term frequency and uniqueness, and used that to assign labels to each topic:
 
+<div style="height: 600px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Topic</th>
 <th title="Field #2">Proposed label</th>
@@ -272,3 +273,4 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 <td> </td>
 </tr>
 </tbody></table>
+</div>
