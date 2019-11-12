@@ -23,6 +23,13 @@ nav ul li, footer ul li {
 table, th, td {
   border: 1px solid #888;
 }
+
+.tableFixHead          { overflow-y: auto; height: 100px; }
+.tableFixHead thead th { position: sticky; top: 0; }
+
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+
 a {
     text-decoration: none;
     color: #dd77aa;
