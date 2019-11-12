@@ -278,3 +278,10 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 </div>
 
 Now that I have a list of topics, I can use these to make sense of clustering. As with my earlier attempt, I merged all documents within each category of recipes into a single long document. I then used gensim's LDA model to assign weights for each topic for each document. The result is as shown:
+
+
+<div style="height: 400px; width: 630px; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/topic%20distributions.png">
+</div>
+
+
