@@ -57,7 +57,7 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 
 <div class="fineprint">Note that the terms obtained from the LDA model have been lemmatized; I've replaced the missing letters in brackets, e.g. juic -> juic(e)</div>
 
-<div style="height: 60%; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Topic</th>
 <th title="Field #2">Proposed label</th>
