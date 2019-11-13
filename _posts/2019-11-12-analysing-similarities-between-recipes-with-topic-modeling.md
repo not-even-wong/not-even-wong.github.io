@@ -944,3 +944,9 @@ and after setting a new cutoff, I've identified a new set of intra-cluster diffe
 </div>
 
 Now that looks so much better!
+
+For example, for cluster 2, which appears to be generically Asian, we could say that these are the traits that define "Asian" food:
+<ul><li>East Asian</li> <li> Seafood</li> <li> Dough (bread)</li> <li> Grilling</li> <li> Meat</li> <li> Frying</li> <li> Salad</li> <li> Soup stock</li> <li> Asian spices</li> <li> Dough handling</li> <li> Poultry</li> <li> Grains</li> <li> Pasta	</li></ul>
+
+and these are the traits that can be used to differentiate between different kinds of "Asian" food:
+<ul><li>Flatbreads</li> <li> Mediterranian</li> <li> Fruit tarts</li> <li> Cheese (hot)</li> <li> Cakes</li> <li> Fresh fruits</li> <li> Sweet dessert</li> <li> Preservation</li> <li> Chocolate</li> <li> Creamy spreads</li> <li> Slow cooking</li> <li> Cookies</li></ul>
