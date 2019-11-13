@@ -946,7 +946,133 @@ and after setting a new cutoff, I've identified a new set of intra-cluster diffe
 Now that looks so much better!
 
 For example, for cluster 2, which appears to be generically Asian, we could say that these are the traits that define "Asian" food:
-<ul><li>East Asian</li> <li> Seafood</li> <li> Dough (bread)</li> <li> Grilling</li> <li> Meat</li> <li> Frying</li> <li> Salad</li> <li> Soup stock</li> <li> Asian spices</li> <li> Dough handling</li> <li> Poultry</li> <li> Grains</li> <li> Pasta	</li></ul>
+<div style="height: 200px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Topic</th>
+<th title="Field #2">Words</th>
+</tr></thead>
+<tbody><tr>
+<td>East Asian</td>
+<td>soy, sesam(e), sauc(e), chines(e), fr(y), oil, tofu, wok, tablespoon, ginger, sprout, chestnut, cornstarch, peanut, scallion</td>
+</tr>
+<tr>
+<td> Seafood</td>
+<td>fish, crab, seafood, fillet, shallot, scallop, lime, thai, mussel, lobster, squid, lemon, juic(e), francisco, san</td>
+</tr>
+<tr>
+<td> Dough (bread)</td>
+<td>dough, yeast, roll, rise, knead, warm, let, make, water, place, ball, hand, doubl(e), flour, work</td>
+</tr>
+<tr>
+<td> Grilling</td>
+<td>eggplant, grill, slice, roast, towel, paper, bacon, broil, place, cut, skewer, platter, broiler, avocado, skin</td>
+</tr>
+<tr>
+<td> Meat</td>
+<td>meat, beef, sauc(e), teaspoon, pork, ground, worchestershir(e), meatbal(l), tablespoon, pepper, patt(y), marinad(e), garlic, barbecu€</td>
+</tr>
+<tr>
+<td> Frying</td>
+<td>mushroom, onion, pepper, saut, heat, add, skillet, oil, minut(e), cook, tomato, rice, chop, garlic, stir</td>
+</tr>
+<tr>
+<td> Salad</td>
+<td>salad, dress(ing), vinegar, cucumb(er), mustard, lettuc(e), pepper, tablespoon, green, red, mayonnais(e), toss, dijon, ingredi(ent), prepar(e)</td>
+</tr>
+<tr>
+<td> Soup stock</td>
+<td>soup, stock, bay, simmer, carrot, broth, leek, leaf, add, celer(y), onion, stew, pot, boil, bring</td>
+</tr>
+<tr>
+<td> Asian spices</td>
+<td>spice, ginger, ground, allspic(e), cinnamon, clove, teaspoon, ml, raisin, chutney, seed, currant, cardamom, nutmeg, mace, store</td>
+</tr>
+<tr>
+<td> Dough handling</td>
+<td>cut, pastr(y), squash, foil, strip, inch, edg(e), knife, place, wrap, end, half, trim, piec(e), aluminum</td>
+</tr>
+<tr>
+<td> Poultry</td>
+<td>chicken, turkey, breast, poultr(y), stuf(fing), broth, casserol, skinless, bone, celer(y), sage, boneless, cook, mushroom, bird</td>
+</tr>
+<tr>
+<td> Grains</td>
+<td>rice, cup, lentil, stir, heat, prepar(e), cook, water, barley, boil, grain, saucepan, method, measur(e), add</td>
+</tr>
+<tr>
+<td> Pasta</td>
+<td>shrimp, noodl(e), ricotta, lasagna, spachetti, sauc(e), devein, pasta, mozzarella, lasagn(a), min, cook, chees(e), ounce, cottag(e)</td>
+</tr>
+</tbody></table>
+</div>
 
 and these are the traits that can be used to differentiate between different kinds of "Asian" food:
-<ul><li>Flatbreads</li> <li> Mediterranian</li> <li> Fruit tarts</li> <li> Cheese (hot)</li> <li> Cakes</li> <li> Fresh fruits</li> <li> Sweet dessert</li> <li> Preservation</li> <li> Chocolate</li> <li> Creamy spreads</li> <li> Slow cooking</li> <li> Cookies</li></ul>
+<div style="height: 200px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Topic</th>
+<th title="Field #2">Words</th>
+</tr></thead>
+<tbody><tr>
+<td>Flatbreads</td>
+<td>pizza, bread, chees(e), bake, oven, crumb, phyllo, slice, sprinkl(e), crepe, preheat, mozzarella, sheet, parmesan, artichok(e)</td>
+</tr>
+<tr>
+<td> Mediterranian</td>
+<td>oliv(e), pasta, basil, oil, garlic, tomato, fresh, italian, parsley, pepper, herb, parmesan, pine, virgin, chop</td>
+</tr>
+<tr>
+<td> Fruit tarts</td>
+<td>pie, orang(e), pineappl(e), banana, crust, peach, cherr(y), shell, fruit, juic(e), whip, unbak(ed), raspberr(y), blueberr(y), dessert</td>
+</tr>
+<tr>
+<td> Cheese (hot)</td>
+<td>chees(e), cheddar, macaroni, broccoli, quich(e), shred, grate, bisquick, parmesan, cup, prepar(e), swiss, egg, zucchini, bake</td>
+</tr>
+<tr>
+<td> Cakes</td>
+<td>cake, sugar, cream, beat, vanilla, egg, pan, cup, cheesecak(e), bake, teaspoon, butter, prepar(e), cool, flour</td>
+</tr>
+<tr>
+<td> Fresh fruits</td>
+<td>strawberr(y), yogurt, mint, juic(e), lemon, berr(y), orang(e), honey, lime, fruit, fresh, plain, mango, zest, raspberr(y)</td>
+</tr>
+<tr>
+<td> Sweet dessert</td>
+<td>pumpkin, peanut, cracker, pud(ding), mix, graham, milk, cup, condens(e), prepar(e), sweeten, jello, cereal, whip, key</td>
+</tr>
+<tr>
+<td> Preservation</td>
+<td>jar, pint, ft, canner, canning, pressu(re), process, pickl(e), tabl(e), lid, recommend, altitud(e), quart, pound, headspac(e)</td>
+</tr>
+<tr>
+<td> Chocolate</td>
+<td>chocol(ate), cocoa, chip, cake, cand(y), vanilla, melt, browni(es), cream, frost, coffe(e), semisweet, sugar, marshmallow, cool</td>
+</tr>
+<tr>
+<td> Creamy spreads</td>
+<td>dip, chees(e), cream, sour, sandwich, tuna, appet(ite), mayonnais(e), salmon, spread, ounce, pita, dill, cracker, hor</td>
+</tr>
+<tr>
+<td> Slow cooking</td>
+<td>crockpot, crock, pot, oyster, cabbag(e), steak, cooker, slow, clam, hour, beef, cajun, meat, sausag(e), cook</td>
+</tr>
+<tr>
+<td> Cookies</td>
+<td>cooki(es), bake, flour, sheet, sugar, dough, teaspoon, butter, soda, roll, shorten, egg, brown, purpos(e), oven</td>
+</tr>
+</tbody></table>
+</div>
+
+At first glance it seems odd that "grains" are not higher up on the list of inter-cluster differentiating topics, since rice is so important to Asians. And "pasta" is there right next to grains. But if you look more closely, the "grains" topic also includes other kinds of grains, and you do have rice dishes around the world - so just rice alone isn't that good a differentiating factor for Asian food. And the "pasta" topic also includes the generic "noodle", as well as "prawn" and "sauce", which are pretty important for Asian food. More importantly, the use of sauce, sesame, and frying are really central to a lot of Asian foods.
+
+On the other hand, things like various breads, garlic, olive, fruits, desserts, baking, and cheeses are part of Asian cooking, but not all that common. So it would make sense that these are possible ways to differentiate between different types of Asian cooking.
+
+I can't comment on all the various European regional cuisines, but in general, this set of intra-cluster differentiating topics seem to be reasonably good differentiators.
+
+So that's it, I guess. If you want to get some ideas of how recipes from different parts of the world differ, you can take this approach, and identify key ingredients and techniques used. You could also apply it on an individual recipe basis, but you'll need to find some other way to visualise it clearly.
+
+I'm more or less done with this project, but here are some avenues I'd like to explore in future:
+<ul>
+  <li>Testing this on other databases - unfortunately, I'll need to find some way to label the recipes from other databases!</li>
+  <li>Machine Learning: I've tried running artificial neural networks on the tf-idf values of the raw corpus (54000+ recipes) randomly split into training and testing sets, but I haven't been able to get above 75% accuracy on the test set. I have not tried doing this with the 35 topic weights instead of using thousands of word counts for each of the 54000+ recipes.</li>
+  <li>Web functionality - would be cool if I could upload this on a server so that people can type in a recipe URL and it'll extract the text from that URL and try to guess what type of recipe it is.</li>
