@@ -11,7 +11,7 @@ Sometimes you hear people say things like "This doesn't taste authentic!"
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/authenticity.png" width="50%">
 
-Ok, admittedly I don't really care so much about authenticity. To me, as long as it tastes good, I'm open to giving it a try. But as a creative producer, I believe you need to be aware of the cultural literacies of your audience, and cooking is no different. People engage in meals like they do any other experience: with a whole lot of baggage and associations, and their experience of the meal is going to be influenced by the lens of their shared experiences. Cooking is a conversation between the chef and the diner through the language of culture.
+Ok, admittedly I don't really care so much about authenticity. To me, as long as it tastes good, I'm open to giving it a try. But when producing creative work, you need to be aware of the cultural literacies of your audience, and cooking is no different. People engage in meals like they do any other experience: with a whole lot of baggage and associations, and their experience of the meal is going to be influenced by the lens of their shared experiences. Cooking is a conversation between the chef and the diner through, and across, the language of culture.
 
 So then what makes something authentic? As an avid amateur chef , my best guess is that (other than sociocultural factors such as who's cooking it and where you're eating it) it's in the ingredients and cooking methods. For example, I don't expect to see Chinese recipes call for letting dough rise before baking, and neither do I expect to see thinly sliced raw fish in American recipes. But I'd like to quantify this.
 
@@ -49,7 +49,7 @@ This was the result of my heirarchical clustering:
 
 Well, those clusters seem to make sense. However, I have no clue as to exactly <i>why</i> those categories are clustered together.
 
-So I went on to make use of topic modeling using the Gensim library. <a href="https://not-even-wong.github.io/2019/11/10/layman-intro-topic-modeling.html">I wrote a very quick layman primer to topic modeling here</a>.
+So I went on to make use of topic modeling using the Gensim library. <a href="https://not-even-wong.github.io/2019/11/10/layman-intro-topic-modeling.html">I wrote a very quick layman primer to topic modeling here</a>. To some extent, here I am effectively using topic modeling as a means of reducing the dimensionality of the data. I <i>could</i> theoretically compare the tf-idf scores for every single word to analyse the clusters obtained from hierarchical clustering. However, there are just too many words in total. The analysis would make a lot more sense if I reduced the number of possible words to compare (the dimensionality of the data) to a smaller number of topics: that's going from many thousands of dimensions to just the number of topics!
 
 After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise these topics:
 
