@@ -135,8 +135,8 @@ corpus_bow = [dictionary.doc2bow(text) for text in corpus_raw]
 pickle.dump(corpus_bow, open('corpus_bow.pkl', 'wb'))
 dictionary.save(dictname)
 
-#dictionary = gensim.corpora.Dictionary.load('dictionary.gensim')
-#corpus_bow = pickle.load(open('corpus_bow.pkl', 'rb'))
+dictionary = gensim.corpora.Dictionary.load('dictionary.gensim')
+corpus_bow = pickle.load(open('corpus_bow.pkl', 'rb'))
 
 #create LDA model
 NUM_TOPICS = 35
@@ -242,3 +242,126 @@ dendrogram(
     labels=np.ravel(categories) #labels each leaf
 )
 plt.show()
+
+"""get categories in same order as dendrogram"""
+
+from scipy.cluster.hierarchy import leaves_list
+leaveslist=pd.DataFrame(leaves_list(heirarchy))
+
+newlist=pd.DataFrame(np.zeros((len(leaveslist),1),dtype=str))
+
+for i in range(len(leaveslist)):
+    newlist.iat[i,0]=categories[leaveslist.iat[i,0]][0]
+    
+print(newlist)
+newlist.to_csv(r'newlist.csv',index=False,header=False)
+leaveslist.to_csv(r'leaveslist.csv',index=False,header=False)
+
+"""heatmap"""
+raw_data = pd.read_csv('cats_scored.csv',index_col=0)
+
+plt.figure(figsize=(100,30))
+plt.imshow(raw_data.drop('cat',1),cmap='plasma')
+plt.xticks(np.arange(35),raw_data.columns.values,rotation='vertical')
+plt.yticks(np.arange(138),raw_data.index.values)
+plt.grid(False)
+plt.show()
+
+"""Analysing variance (not ANOVA)"""
+
+def plot(heatmap):
+    plt.figure(figsize=(10,10))
+    plt.imshow(heatmap,cmap='plasma')
+    plt.xticks(np.arange(35),heatmap.columns,rotation='vertical')
+    plt.yticks(np.arange(37),np.arange(1,38))
+    plt.ylim(-0.5,35.5)
+    plt.xlabel('Topics')
+    plt.ylabel('Cluster number')
+    plt.grid(True)
+    plt.show()
+
+clusters=pd.read_csv('recipes_in_clusters.csv')
+scores=pd.read_csv('cats_scored_arranged.csv')
+
+clustersort=clusters.sort_values(by='Cat_num').reset_index()
+
+for i in range(len(scores)):
+    try:
+        scores.at[i,'Cluster']=clustersort.loc[clustersort['Category'].str.find(scores.at[i,'Cat'])!=-1].iat[0,2]
+    except:
+        pass #since not every category belongs to a cluster
+
+#calculate means
+cluster_means=pd.DataFrame(clusters['Cluster'].unique())
+
+for i in range(0,len(cluster_means)):
+    for j in range(1,36):
+        cluster_means.at[i,list(scores.columns)[j]]=scores.loc[scores['Cluster']==i+1][list(scores.columns)[j]].mean()
+
+
+heatmap_means=cluster_means.drop(0,axis=1)
+plot(np.log(heatmap_means+0.03))
+
+#check distribution
+plt.figure(figsize=(12,5)) 
+plt.hist(np.log(heatmap_means+0.03).unstack(),bins=20)
+plt.show()
+
+#calculate variance
+cluster_variance=pd.DataFrame(clusters['Cluster'].unique())
+
+for i in range(0,len(cluster_variance)):
+    for j in range(1,36):
+        cluster_variance.at[i,list(scores.columns)[j]]=scores.loc[scores['Cluster']==i+1][list(scores.columns)[j]].std()
+
+print(cluster_variance)
+print(scores.loc[scores['Cluster']==33][list(scores.columns)])
+
+heatmap_variance=cluster_variance.drop(0,axis=1)
+plot(heatmap_variance)
+plot(np.log(heatmap_variance+0.03))
+
+#check distribution
+plt.figure(figsize=(12,5)) 
+plt.hist(np.log(heatmap_variance+0.03).unstack(),bins=20)
+plt.show()
+
+"""try with SD/mean"""
+cluster_variance2=pd.DataFrame(clusters['Cluster'].unique())
+
+for i in range(0,len(cluster_variance2)):
+    for j in range(1,36):
+        cluster_variance2.at[i,list(scores.columns)[j]]=(scores.loc[scores['Cluster']==i+1][list(scores.columns)[j]].std())/(scores.loc[scores['Cluster']==i+1][list(scores.columns)[j]].mean())
+
+heatmap_variance2=cluster_variance2.drop(0,axis=1)
+plot(heatmap_variance2)
+plot(np.power(heatmap_variance2+5,3))
+
+#check distribution
+plt.figure(figsize=(12,5)) 
+plt.hist(np.power(heatmap_variance2+5,3).unstack(),bins=20)
+plt.show()
+
+
+"""get list of topics per cluster"""
+cluster_list=pd.DataFrame(clusters['Cluster'].unique())
+
+connector = '; '
+for i in range(0,len(cluster_list)):
+    catlist=connector.join(scores.loc[scores['Cluster']==i+1]['Cat'])
+    catlist=catlist.replace("  "," ")
+    catlist=catlist.replace(" ;",";")
+    cluster_list.at[i,'elements']=catlist
+print(cluster_list)
+
+max_mean=-3
+max_variance=250
+
+means_logged=np.log(heatmap_means+0.03).transpose()
+variance_power=np.power(heatmap_variance2+5,3).transpose()
+
+for i in range(len(cluster_list)):
+    cluster_list.at[i,'Similar topics']=connector.join(means_logged[i].loc[means_logged[i]>max_mean].sort_values(ascending=False).index)
+    cluster_list.at[i,'Different topics']=connector.join(variance_power[i].loc[variance_power[i]>max_variance].sort_values(ascending=False).index)
+print(cluster_list)    
+cluster_list.to_csv(r'similarities and differences.csv')
