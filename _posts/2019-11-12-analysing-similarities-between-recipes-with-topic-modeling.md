@@ -5,6 +5,8 @@ date: 2019-11-12
 ---
 <i>The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></i>
 
+<i>Images and tables are generally scrollable if not displayed in full.</i>
+
 I'm a Singaporean, which means that appreciating the vast diversity of food is a way of life for me. Growing up in a melting pot of cultures and travelling overseas to savour the taste of various local delicacies does that for you.
 
 Sometimes you hear people say things like "This doesn't taste authentic!" 
@@ -294,6 +296,175 @@ Anyway, I used these weights to perform heirarchical clustering to obtain this r
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20with%20gensim%20topics.png">
 
-That looks pretty good! Now let's see what topics contribute to each cluster. Based on the results of the heirarchical clustering, I'll define the following clusters:
+That looks pretty good! Now let's see what topics contribute to each cluster. 
 
+Based on the results of the heirarchical clustering, I'll define the following clusters:
 
+<div style="height: 200px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Cluster</th>
+<th title="Field #2">Elements of cluster</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Fruits, grains &amp; veg: salad fruit; Fruits, grains &amp; veg: pickle; side-dishes relish; side-dishes vinegar; Fruits, grains &amp; veg: bean-salads; Fruits, grains &amp; veg: potato-salads; Fruits, grains &amp; veg: salad; Fruits, grains &amp; veg: salad pasta; side-dishes dressing </td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>ethnic asia chinese; ethnic asia filipino; ethnic asia hawaiian; ethnic asia indonesian; ethnic asia japanese; ethnic asia korean; ethnic asia singapore; ethnic asia thai; ethnic asia vietnamese; main-dishes meat seafood </td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>main-dishes burger; side-dishes marinade; side-dishes rub </td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>ethnic europe greek; ethnic europe italian; main-dishes pasta; main-dishes pizza; side-dishes oil; side-dishes pesto </td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Fruits, grains &amp; veg: pilaf; Fruits, grains &amp; veg: rice </td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Fruits, grains &amp; veg: stuffing; main-dishes crockpot; main-dishes meat poultry </td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>ethnic europe basque; ethnic europe spanish </td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>ethnic africa middle-east; ethnic africa middle-east armenian; ethnic africa middle-east lebanese; ethnic africa middle-east turkish; ethnic africa morocco </td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>main-dishes meat; side-dishes sauce </td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>ethnic africa; ethnic africa middle-east persian; ethnic america brazil; ethnic america cajun; ethnic america caribbean; ethnic america peruvian </td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>ethnic africa ethiopian; Fruits, grains &amp; veg: polenta; Fruits, grains &amp; veg: stuffed-veg; Fruits, grains &amp; veg: vegetable; special-diets vegetarian </td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>ethnic asia indian; side-dishes butter; side-dishes chutney; side-dishes condiment; side-dishes spice </td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>ethnic america mexican; side-dishes salsa; soup chili </td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>Fruits, grains &amp; veg: beans-grains; special-diets babyfood </td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td>main-dishes sandwich; munchies appetizer; munchies dips-spreads </td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td>main-dishes casserole; main-dishes dinner-pies; main-dishes egg; misc microwave; side-dishes cheese; special-diets diabetic </td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td>ethnic america canadian; ethnic europe czech; ethnic europe hungarian; ethnic europe ukrainian; soup soup </td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td>ethnic europe irish; ethnic europe scottish; ethnic europe welsh </td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td>ethnic america native; main-dishes breakfast </td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>ethnic europe danish; ethnic europe french; ethnic europe norwegian </td>
+</tr>
+<tr>
+<td align="right">21</td>
+<td>ethnic europe finnish; ethnic europe polish; ethnic europe swedish </td>
+</tr>
+<tr>
+<td align="right">22</td>
+<td>ethnic europe british; ethnic europe german; ethnic europe russian; ethnic europe swiss; ethnic non-regional jewish </td>
+</tr>
+<tr>
+<td align="right">23</td>
+<td>ethnic asia australian; ethnic europe portuguese; misc medieval </td>
+</tr>
+<tr>
+<td align="right">24</td>
+<td>baked-goods dessert cobbler; baked-goods dessert pie; baked-goods dessert tart; dessert ; side-dishes pudding </td>
+</tr>
+<tr>
+<td align="right">25</td>
+<td>baked-goods pastry; ethnic europe austrian; holiday christmas </td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td>holiday ; holiday halloween; misc camping; misc copycat; misc kid; misc mix; munchies snack </td>
+</tr>
+<tr>
+<td align="right">27</td>
+<td>baked-goods dessert cooky; baked-goods scone </td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>baked-goods bread; baked-goods bun; baked-goods muffin; baked-goods roll; misc pet-food dog; special-diets gluten-free </td>
+</tr>
+<tr>
+<td align="right">29</td>
+<td>baked-goods dessert cake; baked-goods dessert cheesecake </td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>dessert frozen-desserts; dessert mousse; dessert trifle </td>
+</tr>
+<tr>
+<td align="right">31</td>
+<td>dessert candy; dessert chocolate; holiday easter </td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>baked-goods dessert brownie; dessert frosting </td>
+</tr>
+<tr>
+<td align="right">33</td>
+<td>misc canning </td>
+</tr>
+<tr>
+<td align="right">34</td>
+<td>side-dishes jam; side-dishes preserve </td>
+</tr>
+<tr>
+<td align="right">35</td>
+<td>dessert frozen-yogurt; dessert sherbet; dessert sorbet </td>
+</tr>
+<tr>
+<td align="right">36</td>
+<td>Fruits, grains &amp; veg: fruit; side-dishes beverage </td>
+</tr>
+</tbody></table>
+</div>
+
+and then I calculated the means weights of each topic for the categories within each cluster. That's a mouthful, but basically what I'm saying is that for each cluster, I wanted to know, as a whole, which topics were most important overall. 
+
+Here's the result presented in a heatmap (with more interpretation further down...)"
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/topics%20of%20clusters.png">
+<div class="fineprint">(again, the data for this heatmap and the next has been logarithmically scaled to provide better visualisation in the heatmap, since values can vary by orders of magnitude)</div>
+
+In addition, I calculated the standard deviation of the weights for each topic for the categories within each cluster. In layman terms, I wanted to know, which each cluster, which topics had the most variation. So while the average weights would tell me which topics are most important for that cluster, the topics with the most variation for that cluster would tell me which topics are likely to be important for differentiating between the categories in that cluster.
+
+Here's the result presented in a heatmap:
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/variance%20of%20clusters.png">
+<div class="fineprint">(data was logarithmically scaled; cluster 33 has no values because that cluster has only one category (canning), and therefore there is no variance whatsoever)</div>
+
+This is a good start to get a quick idea of what topics might be important for each cluster! But let's see how that looks in table form...
+
+<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;"></div>
