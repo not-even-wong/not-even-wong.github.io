@@ -462,9 +462,239 @@ Here's the result presented in a heatmap (with more interpretation further down.
 In addition, I calculated the standard deviation of the weights for each topic for the categories within each cluster. In layman terms, I wanted to know, which each cluster, which topics had the most variation. So while the average weights would tell me which topics are most important for that cluster, the topics with the most variation for that cluster would tell me which topics are likely to be important for differentiating between the categories in that cluster.
 
 Here's the result presented in a heatmap:
+
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/variance%20of%20clusters.png">
 <div class="fineprint">(data was logarithmically scaled; cluster 33 has no values because that cluster has only one category (canning), and therefore there is no variance whatsoever)</div>
 
-This is a good start to get a quick idea of what topics might be important for each cluster! But let's see how that looks in table form...
+This is a good start to get a quick idea of what topics might be important for each cluster! You might have realised that I'm doing something like dimensionality reduction again, this time with clustering, so that instead of having to look at all 150+ recipes, I'm looking at clusters of similar recipes.
 
-<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;"></div>
+<div class="fineprint">Strictly speaking, this isn't dimensionality reduction, since dimensionality is supposed to refer to the data itself (e.g. number of times each word appears) while the categories here are more like labels. But I'm using it with the same endgoal in mind: to make it easier to extract human-intuitive information by reducing the number of things to look at.</div>
+
+We could get more insights by taking a look at this in table form. I set an arbitrary threshold and extracted the topics with the highest mean and largest variance for each cluster:
+
+<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Cluster</th>
+<th title="Field #2">Elements of cluster</th>
+<th title="Field #3">Similar topics</th>
+<th title="Field #4">Differentiating topics</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Fruits, grains &amp; veg: salad fruit; Fruits, grains &amp; veg: pickle; side-dishes relish; side-dishes vinegar; Fruits, grains &amp; veg: bean-salads; Fruits, grains &amp; veg: potato-salads; Fruits, grains &amp; veg: salad; Fruits, grains &amp; veg: salad pasta; side-dishes dressing </td>
+<td>Salad; Mediterranian; Legumes; Fresh fruits; Preservation; Jelly; Asian spices; Nutrition; Fruit tarts; Grilling</td>
+<td>Legumes; Preservation; Mediterranian; Fresh fruits; Salad; Jelly; Fruit tarts; Asian spices; Dry fruits; Frying; Grilling; Blender; East Asian; Meat; Egg &amp; dairy; Poultry; Pasta; Curry; Cheese (hot); Nutrition; Grains; Dough (bread); Creamy spreads; Seafood; Mexican</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>ethnic asia chinese; ethnic asia filipino; ethnic asia hawaiian; ethnic asia indonesian; ethnic asia japanese; ethnic asia korean; ethnic asia singapore; ethnic asia thai; ethnic asia vietnamese; main-dishes meat seafood </td>
+<td>East Asian; Seafood; Dough (bread); Grilling; Meat; Frying; Salad; Soup stock; Asian spices; Dough handling; Poultry; Grains; Pasta</td>
+<td>East Asian; Seafood; Meat; Frying; Dough (bread); Fruit tarts; Soup stock; Grilling; Salad; Asian spices; Slow cooking; Pasta; Egg &amp; dairy; Dough handling; Breads; Mediterranian; Curry; Poultry; Fresh fruits; Flatbreads; Jelly; Grains; Blender; Cakes</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>main-dishes burger; side-dishes marinade; side-dishes rub </td>
+<td>Meat; Asian spices; Grilling; Dough (bread); Blender; Salad; Seafood; East Asian; Poultry; Frying; Fresh fruits; Creamy spreads; Nutrition</td>
+<td>Meat; Asian spices; Grilling; Seafood; Dough (bread); Frying; Creamy spreads; East Asian; Blender; Flatbreads; Salad; Fresh fruits; Mediterranian; Nutrition; Mexican; Poultry; Microwave; Slow cooking</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>ethnic europe greek; ethnic europe italian; main-dishes pasta; main-dishes pizza; side-dishes oil; side-dishes pesto </td>
+<td>Mediterranian; Flatbreads; Dough (bread); Blender; Frying; Pasta; Cheese (hot); Grilling; Egg &amp; dairy; Dough handling; Soup stock; East Asian; Grains; Seafood; Asian spices; Meat; Jelly</td>
+<td>Mediterranian; Flatbreads; Blender; Pasta; Dough (bread); Frying; East Asian; Asian spices; Jelly; Egg &amp; dairy; Cheese (hot); Dough handling; Soup stock; Grilling; Grains; Salad; Fresh fruits; Seafood; Cookies; Mexican; Cakes; Meat; Preservation; Curry; Nutrition; Chocolate</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Fruits, grains &amp; veg: pilaf; Fruits, grains &amp; veg: rice </td>
+<td>Grains; Frying; Asian spices; Mediterranian; Nutrition; East Asian; Soup stock; Curry; Poultry; Dough handling</td>
+<td>Grains; East Asian; Asian spices; Nutrition; Frying; Seafood; Cheese (hot); Curry; Mexican</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Fruits, grains &amp; veg: stuffing; main-dishes crockpot; main-dishes meat poultry </td>
+<td>Poultry; Slow cooking; Frying; Meat; Soup stock; Breads; Grilling; Grains; Dough (bread); East Asian; Egg &amp; dairy; Legumes</td>
+<td>Slow cooking; Poultry; Frying; Meat; Breads; Grilling; East Asian; Legumes; Egg &amp; dairy; Jelly; Grains; Soup stock; Seafood; Dough (bread); Cheese (hot); Dry fruits; Flatbreads; Mexican; Nutrition; Asian spices; Salad; Curry</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>ethnic europe basque; ethnic europe spanish </td>
+<td>Frying; Seafood; Grilling; Legumes; Soup stock; Egg &amp; dairy; Poultry; Flatbreads; Dough handling</td>
+<td>Grilling; Legumes; Poultry; Egg &amp; dairy; Microwave; Slow cooking; Seafood; Pasta; Salad; Mediterranian; Flatbreads; Nutrition; Grains; Dough (bread); Frying; Soup stock; East Asian; Blender</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>ethnic africa middle-east; ethnic africa middle-east armenian; ethnic africa middle-east lebanese; ethnic africa middle-east turkish; ethnic africa morocco </td>
+<td>Grilling; Frying; Asian spices; Dough (bread); Grains; Mediterranian; Jelly; Soup stock; Salad; Dough handling; Cookies; Fresh fruits; Poultry; Meat; Legumes; Curry; Egg &amp; dairy; Blender</td>
+<td>Grilling; Asian spices; Mediterranian; Soup stock; Salad; Meat; Cookies; Frying; Grains; Dough (bread); Egg &amp; dairy; Fresh fruits; Seafood; Dough handling; Blender; Legumes; Poultry; Jelly; Creamy spreads; Curry; Cakes</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>main-dishes meat; side-dishes sauce </td>
+<td>Meat; Frying; Mediterranian; Grilling; Egg &amp; dairy; Grains; Jelly; Blender; Seafood; Poultry; Soup stock; Dough (bread); East Asian; Slow cooking; Mexican; Asian spices; Salad</td>
+<td>Grilling; Jelly; Mediterranian; Blender; Frying; Poultry; Grains; Egg &amp; dairy; Dough (bread); Dough handling; Chocolate; Legumes; Seafood; Soup stock; Asian spices; Salad; Meat; Breads; Fresh fruits; East Asian</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>ethnic africa; ethnic africa middle-east persian; ethnic america brazil; ethnic america cajun; ethnic america caribbean; ethnic america peruvian </td>
+<td>Frying; Meat; Seafood; Legumes; Soup stock; Grilling; Grains; Dough (bread); Asian spices; Poultry; Curry; Slow cooking; Mexican; Dough handling; Salad; Egg &amp; dairy; Jelly</td>
+<td>Slow cooking; Mexican; Grilling; Frying; Seafood; Asian spices; Curry; Soup stock; Meat; Legumes; Grains; Fresh fruits; Egg &amp; dairy; Jelly; Cookies; Dry fruits; Dough (bread); Poultry; Blender; Flatbreads; Mediterranian; Breads; Salad; Cheese (hot); Dough handling</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>ethnic africa ethiopian; Fruits, grains &amp; veg: polenta; Fruits, grains &amp; veg: stuffed-veg; Fruits, grains &amp; veg: vegetable; special-diets vegetarian </td>
+<td>Frying; Grains; Mediterranian; Asian spices; Grilling; Flatbreads; Curry; Legumes; East Asian; Dough (bread); Dough handling; Breads; Soup stock; Cheese (hot); Salad; Nutrition; Blender; Meat; Egg &amp; dairy</td>
+<td>Asian spices; Frying; East Asian; Grilling; Mediterranian; Dough (bread); Legumes; Dough handling; Salad; Jelly; Curry; Breads; Flatbreads; Soup stock; Grains; Meat; Poultry; Cheese (hot); Microwave; Egg &amp; dairy; Nutrition; Mexican; Blender</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>ethnic asia indian; side-dishes butter; side-dishes chutney; side-dishes condiment; side-dishes spice </td>
+<td>Asian spices; Curry; Meat; Jelly; Blender; Salad; Dry fruits; Preservation; Frying; Fresh fruits; Grains; Dough (bread); Seafood; Egg &amp; dairy</td>
+<td>Curry; Asian spices; Meat; Jelly; Salad; Dry fruits; Frying; Blender; Preservation; Grains; Dough (bread); Egg &amp; dairy; Fresh fruits; Grilling; Sweet dessert; Mexican; Mediterranian; Creamy spreads; Poultry; Legumes; Fruit tarts</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>ethnic america mexican; side-dishes salsa; soup chili </td>
+<td>Mexican; Blender; Frying; Meat; Salad; Legumes; Grilling; Soup stock; Dough (bread); Fresh fruits; Poultry; Mediterranian</td>
+<td>Blender; Salad; Meat; Frying; Legumes; Grilling; Mexican; Fresh fruits; Soup stock; Dough (bread); Mediterranian; Egg &amp; dairy; Poultry; Grains; Dough handling; Slow cooking; Cookies; Seafood; Cheese (hot); Microwave</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>Fruits, grains &amp; veg: beans-grains; special-diets babyfood </td>
+<td>Legumes; Egg &amp; dairy; Dough (bread); Grains; Frying; Blender; Breads; Poultry; Fresh fruits; Asian spices; Cheese (hot); Meat</td>
+<td>Egg &amp; dairy; Frying; Dough (bread); Grains; Blender; Poultry; Asian spices; Breads; Meat; Cheese (hot); Mexican; Mediterranian; Fruit tarts; Curry; Cookies; Salad; Fresh fruits; Soup stock; Microwave; Nutrition; East Asian; Slow cooking</td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td>main-dishes sandwich; munchies appetizer; munchies dips-spreads </td>
+<td>Creamy spreads; Grilling; Meat; Flatbreads; Salad; Frying; Mediterranian; Mexican; Blender; East Asian; Dough (bread); Dough handling; Fresh fruits; Nutrition; Breads; Legumes; Egg &amp; dairy</td>
+<td>Creamy spreads; Grilling; Meat; Blender; Flatbreads; Frying; Dough handling; Salad; Mexican; Fresh fruits; Dough (bread); Mediterranian; East Asian; Egg &amp; dairy; Poultry; Legumes; Breads; Cookies</td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td>main-dishes casserole; main-dishes dinner-pies; main-dishes egg; misc microwave; side-dishes cheese; special-diets diabetic </td>
+<td>Cheese (hot); Egg &amp; dairy; Microwave; Frying; Nutrition; Creamy spreads; Flatbreads; Breads; Mediterranian; Dough (bread); Dough handling; Meat; Grilling; Poultry; Legumes; Mexican; Salad; Grains</td>
+<td>Cheese (hot); Microwave; Nutrition; Egg &amp; dairy; Creamy spreads; Frying; Poultry; Dough (bread); Salad; Flatbreads; Grilling; Grains; Mediterranian; Jelly; Chocolate; Cookies; Breads; Dough handling; Mexican; Fruit tarts; Legumes; Soup stock; Pasta; Sweet dessert; Meat; East Asian; Blender; Fresh fruits; Dry fruits</td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td>ethnic america canadian; ethnic europe czech; ethnic europe hungarian; ethnic europe ukrainian; soup soup </td>
+<td>Soup stock; Dough (bread); Egg &amp; dairy; Cookies; Meat; Frying; Grains; Slow cooking; Legumes; Cakes; Dry fruits; Asian spices; Breads; Grilling</td>
+<td>Soup stock; Dough (bread); Cookies; Cakes; Dry fruits; Frying; Meat; Grains; Egg &amp; dairy; Asian spices; Slow cooking; Grilling; Mediterranian; Chocolate; Breads; Seafood; Jelly; Flatbreads; Blender; Legumes; Pasta; Curry; Fruit tarts; Creamy spreads; Cheese (hot); East Asian; Mexican</td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td>ethnic europe irish; ethnic europe scottish; ethnic europe welsh </td>
+<td>Breads; Soup stock; Dough (bread); Cookies; Asian spices; Cakes; Egg &amp; dairy; Dough handling; Grilling; Meat; Slow cooking; Legumes; Dry fruits; Nutrition; Jelly</td>
+<td>Cookies; Soup stock; Jelly; Nutrition; Egg &amp; dairy; Legumes; Cakes; Asian spices; Dough handling; Slow cooking; Microwave; Grilling; Dough (bread); Dry fruits; Breads; Chocolate; Grains; Cheese (hot); Meat; Sweet dessert; Poultry</td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td>ethnic america native; main-dishes breakfast </td>
+<td>Breads; Jelly; Egg &amp; dairy; Legumes; Curry; Cheese (hot); Dough (bread); Soup stock; Frying; Mexican; Salad; Grilling; Flatbreads; Dry fruits; Nutrition; Cookies; Asian spices</td>
+<td>Cheese (hot); Curry; Soup stock; Jelly; Legumes; Salad; Egg &amp; dairy; Flatbreads; Dry fruits; Fruit tarts; Fresh fruits; Cakes; Seafood; Creamy spreads; Nutrition; Asian spices; Sweet dessert; Mexican; Breads; Blender</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>ethnic europe danish; ethnic europe french; ethnic europe norwegian </td>
+<td>Egg &amp; dairy; Dough (bread); Soup stock; Seafood; Grilling; Cookies; Breads; Creamy spreads; Salad; Dough handling; Cakes; Poultry; Legumes; Meat; Frying; Chocolate; Jelly</td>
+<td>Soup stock; Creamy spreads; Frying; Cookies; Poultry; Grilling; Dough handling; Jelly; Chocolate; Seafood; Cakes; Mediterranian; Dry fruits; Grains; Salad; Meat; Flatbreads; Breads; Dough (bread); Legumes</td>
+</tr>
+<tr>
+<td align="right">21</td>
+<td>ethnic europe finnish; ethnic europe polish; ethnic europe swedish </td>
+<td>Dough (bread); Soup stock; Breads; Egg &amp; dairy; Cakes; Slow cooking; Frying; Meat; Legumes; Seafood; Asian spices; Jelly; Grilling; Dry fruits; Fresh fruits</td>
+<td>Slow cooking; Breads; Soup stock; Dough (bread); Frying; Grilling; Meat; Flatbreads; Cakes; Dry fruits; Asian spices; Seafood; Legumes; Cookies; Fresh fruits; Salad; Curry; Chocolate; Creamy spreads; Microwave</td>
+</tr>
+<tr>
+<td align="right">22</td>
+<td>ethnic europe british; ethnic europe german; ethnic europe russian; ethnic europe swiss; ethnic non-regional jewish </td>
+<td>Dough (bread); Soup stock; Breads; Egg &amp; dairy; Cakes; Asian spices; Cookies; Grilling; Dough handling; Frying; Jelly; Meat; Dry fruits; Cheese (hot); Creamy spreads; Legumes</td>
+<td>Meat; Frying; Cakes; Cheese (hot); Dough (bread); Breads; Soup stock; Asian spices; Egg &amp; dairy; Nutrition; Grilling; Cookies; Dough handling; Salad; Creamy spreads; Dry fruits; Chocolate; Poultry; Jelly; Pasta; Slow cooking; Seafood; Fresh fruits</td>
+</tr>
+<tr>
+<td align="right">23</td>
+<td>ethnic asia australian; ethnic europe portuguese; misc medieval </td>
+<td>Dough (bread); Seafood; Asian spices; Meat; Breads; Soup stock; Grilling; Egg &amp; dairy; Frying; Cakes; Legumes; Poultry; Dough handling; Nutrition; Mediterranian; Dry fruits</td>
+<td>Asian spices; Frying; Legumes; Poultry; Seafood; Cakes; Dough handling; Dry fruits; Dough (bread); Egg &amp; dairy; Grilling; Jelly; Breads; Grains; Nutrition; Soup stock; Cookies; Meat; Fruit tarts; East Asian; Flatbreads; Mediterranian</td>
+</tr>
+<tr>
+<td align="right">24</td>
+<td>baked-goods dessert cobbler; baked-goods dessert pie; baked-goods dessert tart; dessert ; side-dishes pudding </td>
+<td>Cakes; Egg &amp; dairy; Cookies; Dry fruits; Fruit tarts; Jelly; Chocolate; Dough handling; Breads; Sweet dessert; Fresh fruits; Dough (bread)</td>
+<td>Cookies; Fruit tarts; Breads; Egg &amp; dairy; Dough handling; Chocolate; Cakes; Dry fruits; Sweet dessert; Fresh fruits; Grains; Dough (bread); Asian spices; Jelly</td>
+</tr>
+<tr>
+<td align="right">25</td>
+<td>baked-goods pastry; ethnic europe austrian; holiday christmas </td>
+<td>Dough (bread); Cookies; Cakes; Egg &amp; dairy; Chocolate; Breads; Dough handling; Asian spices; Dry fruits</td>
+<td>Cookies; Egg &amp; dairy; Breads; Chocolate; Dough handling; Cakes; Dry fruits; Asian spices; Soup stock; Grilling; Jelly; Dough (bread); Fruit tarts; Sweet dessert; Salad; Fresh fruits; Meat</td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td>holiday ; holiday halloween; misc camping; misc copycat; misc kid; misc mix; munchies snack </td>
+<td>Dough (bread); Sweet dessert; Cookies; Chocolate; Breads; Jelly; Dough handling; Meat; Grains; Egg &amp; dairy; Legumes; Salad; Asian spices; Microwave; Mexican; Flatbreads; Creamy spreads</td>
+<td>Sweet dessert; Dough (bread); Dough handling; Chocolate; Breads; Meat; Cookies; Grains; Egg &amp; dairy; Jelly; Mexican; Legumes; Microwave; Grilling; Asian spices; Curry; Cakes; Slow cooking; Flatbreads; Poultry; Salad; Soup stock; Dry fruits; Fresh fruits; Seafood; Fruit tarts; Creamy spreads; Cheese (hot)</td>
+</tr>
+<tr>
+<td align="right">27</td>
+<td>baked-goods dessert cooky; baked-goods scone </td>
+<td>Cookies; Breads; Chocolate; Dough (bread); Cakes; Fresh fruits; Nutrition; Dry fruits; Dough handling</td>
+<td>Breads; Chocolate; Cookies; Cakes; Dry fruits; Fresh fruits; Sweet dessert; Dough (bread); Nutrition; Flatbreads; Dough handling</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>baked-goods bread; baked-goods bun; baked-goods muffin; baked-goods roll; misc pet-food dog; special-diets gluten-free </td>
+<td>Breads; Dough (bread); Cookies; Cakes; Nutrition; Flatbreads; Grains</td>
+<td>Breads; Dough (bread); Cookies; Nutrition; Cakes; Flatbreads; Meat; Poultry; Grains; Dry fruits; Fruit tarts; Legumes; Fresh fruits; Asian spices; Jelly; Chocolate</td>
+</tr>
+<tr>
+<td align="right">29</td>
+<td>baked-goods dessert cake; baked-goods dessert cheesecake </td>
+<td>Cakes; Chocolate; Breads; Jelly; Sweet dessert; Dough (bread); Fruit tarts; Fresh fruits; Dough handling; Dry fruits</td>
+<td>Cakes; Breads; Cookies; Sweet dessert; Asian spices; Dry fruits; Chocolate; Egg &amp; dairy; Dough (bread); Jelly; Blender</td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>dessert frozen-desserts; dessert mousse; dessert trifle </td>
+<td>Chocolate; Egg &amp; dairy; Jelly; Fresh fruits; Cakes; Sweet dessert; Fruit tarts; Dough (bread); Dough handling</td>
+<td>Chocolate; Jelly; Egg &amp; dairy; Fresh fruits; Sweet dessert; Dough handling; Fruit tarts; Dough (bread); Blender</td>
+</tr>
+<tr>
+<td align="right">31</td>
+<td>dessert candy; dessert chocolate; holiday easter </td>
+<td>Chocolate; Dough (bread); Sweet dessert; Jelly; Cookies; Cakes; Egg &amp; dairy; Dough handling; Breads</td>
+<td>Jelly; Chocolate; Sweet dessert; Cakes; Dough (bread); Cookies; Egg &amp; dairy; Breads; Dough handling; Fresh fruits</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>baked-goods dessert brownie; dessert frosting </td>
+<td>Chocolate; Cakes; Breads; Jelly; Cookies; Egg &amp; dairy; Nutrition</td>
+<td>Breads; Jelly; Chocolate; Cakes; Cookies; Egg &amp; dairy; Dough (bread); Fresh fruits; Grains</td>
+</tr>
+<tr>
+<td align="right">33</td>
+<td>misc canning </td>
+<td>Preservation; Jelly; Dough (bread); Dry fruits; Legumes</td>
+<td>n/a (only one category of recipes in this cluster)</td>
+</tr>
+<tr>
+<td align="right">34</td>
+<td>side-dishes jam; side-dishes preserve </td>
+<td>Jelly; Preservation; Fresh fruits; Asian spices; Dry fruits; Sweet dessert; Fruit tarts; Dough (bread); Blender</td>
+<td>Jelly; Asian spices; Sweet dessert; Dry fruits; Preservation; Mediterranian; Egg &amp; dairy; Soup stock; Microwave; Fresh fruits; Slow cooking</td>
+</tr>
+<tr>
+<td align="right">35</td>
+<td>dessert frozen-yogurt; dessert sherbet; dessert sorbet </td>
+<td>Fresh fruits; Jelly; Blender; Fruit tarts; Chocolate; Cakes; Nutrition; Sweet dessert; Dry fruits</td>
+<td>Jelly; Chocolate; Sweet dessert; Fruit tarts; Nutrition; Cakes; Fresh fruits; Blender; Cheese (hot); Egg &amp; dairy; Dry fruits; Dough handling; Asian spices</td>
+</tr>
+<tr>
+<td align="right">36</td>
+<td>Fruits, grains &amp; veg: fruit; side-dishes beverage </td>
+<td>Fresh fruits; Jelly; Dry fruits; Fruit tarts; Asian spices; Chocolate; Nutrition; Dough (bread); Dough handling; Egg &amp; dairy; Preservation</td>
+<td>Dry fruits; Fresh fruits; Chocolate; Asian spices; Dough handling; Fruit tarts; Grilling; Nutrition; Sweet dessert; Egg &amp; dairy; Grains; Mediterranian; Jelly; Salad; Dough (bread)</td>
+</tr>
+</tbody></table>
+</div>
+
