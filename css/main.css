@@ -33,6 +33,7 @@ th, td { padding: 8px 16px; }
 .border {   border-width: 2px;   
             border-color: #004d99;   
             border-style: solid; 
+            padding:4px
 }
 a {
     text-decoration: none;
