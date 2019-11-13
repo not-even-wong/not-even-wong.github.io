@@ -4,6 +4,9 @@ title: "Analysing similarities between recipes with topic modeling"
 date: 2019-11-12
 thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png
 ---
+
+<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png" style="width: 300px" class="border"></p>
+
 <div class="fineprint">The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
 
 <div class="fineprint">Images and tables are generally scrollable if not displayed in full.</div>
