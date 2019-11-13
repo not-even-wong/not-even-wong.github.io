@@ -1084,5 +1084,7 @@ I'm more or less done with this project, but here are some avenues I'd like to e
   <li>Testing this on other databases - unfortunately, I'll need to find some way to label the recipes from other databases!</li>
   <li>Machine Learning: I've tried running artificial neural networks on the tf-idf values of the raw corpus (54000+ recipes) randomly split into training and testing sets, but I haven't been able to get above 75% accuracy on the test set. I have not tried doing this with the 35 topic weights instead of using thousands of word counts for each of the 54000+ recipes.</li>
   <li>Web functionality - would be cool if I could upload this on a server so that people can type in a recipe URL and it'll extract the text from that URL and try to guess what type of recipe it is.</li>
+  
+Please do send me any questions or feedback you might have using the contact form below!
 
 p.s.- the picture I'm using for the thumbnail of this post is a photo of natto crepe. That's... fermented japanese soybean and sushi vinegar shortgrain rice on thin french egg pancake. I think the sauce was mayo and konbu. I look out for this every time I visit Kyoto, it's amazing. And very definitely Japanese - despite crepe being a French invention, egg dishes are really common in Japan. In fact, natto and rice, a traditional Japanese breakfast, is sometimes served with egg rolls (tamagoyaki). However, absolutely none of these are in the Japanese section of my recipe database, so clearly I need to collect more data.
