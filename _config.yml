@@ -3,7 +3,7 @@ markdown: kramdown
 
 title: Not Even Wong
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
-description: > # your text below (remove <br> elements if you don't need line breaks)
+description: 
   I'm a physicist, musician, and educator by training, and I enjoy seeing numbers jump through hoops.
   <br><br>
   I'll be updating my personal research projects here as time goes by. 
