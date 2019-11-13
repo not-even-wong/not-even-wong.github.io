@@ -15,7 +15,10 @@ layout: default
 	<p>Projects and posts:</p>
 	<ul>
 	{% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	<div width="300px">
+		<img src="{{ post.thumbnail }}" style="width: 300px">
+		<span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+	</div>
 	{% endfor %}
 	</ul>
 </div>
