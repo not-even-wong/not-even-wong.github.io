@@ -2,7 +2,7 @@
 layout: post
 title: "A layman primer to topic modeling"
 date: 2019-11-10
-thumbnail: /_posts/20191110/20191110_thumb.png
+thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191110/20191110_thumb.png
 ---
 
 After deciding to put this portfolio together, I realised that not everyone knows what topic modeling is.
