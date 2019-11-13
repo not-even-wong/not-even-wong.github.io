@@ -11,7 +11,9 @@ Sometimes you hear people say things like "This doesn't taste authentic!"
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/authenticity.png" width="50%">
 
-Well, then what makes something authentic? As an avid amateur chef, my best guess is that (other than sociocultural factors such as who's cooking it and where you're eating it) it's in the ingredients and cooking methods. For example, I don't expect to see Chinese recipes call for letting dough rise before baking, and neither do I expect to see thinly sliced raw fish in American recipes. But I'd like to quantify this.
+Ok, admittedly I don't really care so much about authenticity. To me, as long as it tastes good, I'm open to giving it a try. But as a creative producer, I believe you need to be aware of the cultural literacies of your audience, and cooking is no different. People engage in meals like they do any other experience: with a whole lot of baggage and associations, and their experience of the meal is going to be influenced by the lens of their shared experiences. Cooking is a conversation between the chef and the diner through the language of culture.
+
+So then what makes something authentic? As an avid amateur chef , my best guess is that (other than sociocultural factors such as who's cooking it and where you're eating it) it's in the ingredients and cooking methods. For example, I don't expect to see Chinese recipes call for letting dough rise before baking, and neither do I expect to see thinly sliced raw fish in American recipes. But I'd like to quantify this.
 
 Ideally, I'd love to be able to interview countless chefs and diners to collate their thoughts about different cultural experiences. Ideally, I'd also love to have unlimited time and funding and research assistants. But we can't always get what we want.
 
