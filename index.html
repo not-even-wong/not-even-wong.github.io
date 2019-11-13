@@ -17,7 +17,9 @@ layout: default
 	{% for post in site.posts %}
 	<div width="300px">
 		<img src="{{ post.thumbnail }}" style="width: 300px">
+		<br>
 		<span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+		<br><br>
 	</div>
 	{% endfor %}
 	</ul>
