@@ -291,6 +291,6 @@ Anyway, I used these weights to perform heirarchical clustering to obtain this r
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20with%20gensim%20topics.png">
 
-That looks pretty good! Now let's see what topics contribute to each cluster! Based on the results of the heirarchical clustering, I'll define the following clusters:
+That looks pretty good! Now let's see what topics contribute to each cluster. Based on the results of the heirarchical clustering, I'll define the following clusters:
 
 
