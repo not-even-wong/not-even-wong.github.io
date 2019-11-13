@@ -9,7 +9,7 @@ I'm a Singaporean, which means that appreciating the vast diversity of food is a
 
 Sometimes you hear people say things like "This doesn't taste authentic!" 
 
-<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/authenticity.png" width=50%>
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/authenticity.png" width="50%">
 
 Well, then what makes something authentic? As an avid amateur chef, my best guess is that (other than sociocultural factors such as who's cooking it and where you're eating it) it's in the ingredients and cooking methods. For example, I don't expect to see Chinese recipes call for letting dough rise before baking, and neither do I expect to see thinly sliced raw fish in American recipes. But I'd like to quantify this.
 
@@ -285,12 +285,12 @@ Now that I have a list of topics, I can use these to make sense of clustering. A
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/topic%20distributions.png">
 </div>
 
-...but that's a bit too much info to easily take in! 
+...but that's a bit too much info to easily take in! That said, it <b><i>is</i></b> possible to see some basic trends in that heatmap.
 
-I then used these weights to perform heirarchical clustering to obtain this result:
+Anyway, I used these weights to perform heirarchical clustering to obtain this result:
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20with%20gensim%20topics.png">
 
-Finally, let's see what topics contribute to each cluster! Based on the results of the heirarchical clustering, I'll define the following clusters:
+That looks pretty good! Now let's see what topics contribute to each cluster! Based on the results of the heirarchical clustering, I'll define the following clusters:
 
 
