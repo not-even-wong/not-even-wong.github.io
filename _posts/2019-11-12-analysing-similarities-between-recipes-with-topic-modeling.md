@@ -277,7 +277,15 @@ I set λ = 0.6 for a good balance between term frequency and uniqueness, and use
 </tbody></table>
 </div>
 
-Now that I have a list of topics, I can use these to make sense of clustering. As with my earlier attempt, I merged all documents within each category of recipes into a single long document. I then used gensim's LDA model to assign weights for each topic for each document. I then used these to perform heirarchical clustering to obtain this result:
+Now that I have a list of topics, I can use these to make sense of clustering. As with my earlier attempt, I merged all documents within each category of recipes into a single long document. I then used gensim's LDA model to assign weights for each topic for each document. This can be visualised in a heatmap...
+
+<div style="height: 400px; width: 630px; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<img src="https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/topic%20distributions.png">
+</div>
+
+...but that's a bit too much info to easily take in! 
+
+I then used these weights to perform heirarchical clustering to obtain this result:
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/heirarchy%20of%20recipes%20with%20gensim%20topics.png">
 
