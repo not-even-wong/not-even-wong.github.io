@@ -47,15 +47,15 @@ This was the result of my heirarchical clustering:
 
 Well, those clusters seem to make sense. However, I have no clue as to exactly <i>why</i> those categories are clustered together.
 
-So I went on to make use of topic modeling using the Gensim library. <a href="https://not-even-wong.github.io/2019/11/10/layman-intro-topic-modeling.html">I wrote a very quick layman primer to it here</a>.
+So I went on to make use of topic modeling using the Gensim library. <a href="https://not-even-wong.github.io/2019/11/10/layman-intro-topic-modeling.html">I wrote a very quick layman primer to topic modeling here</a>.
 
-After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise these topics.
+After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise these topics:
 
 <a href="https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/pyLDAvis%20visual%20for%20upload.ipynb">View online</a>
 
 <a href="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/lda35.html">Download to desktop</a>
 
-I set λ = 0.6 for a good balance between term frequency and uniqueness, and used that to assign labels to each topic:
+To assign labels, I set λ = 0.6 for a good balance between term frequency and uniqueness, and used the top 15 terms:
 
 <div class="fineprint">Note that the terms obtained from the LDA model have been lemmatized; I've replaced the missing letters in brackets, e.g. juic -> juic(e)</div>
 
