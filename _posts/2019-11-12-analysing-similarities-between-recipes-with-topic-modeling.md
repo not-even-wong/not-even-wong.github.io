@@ -84,7 +84,7 @@ To assign labels, I set λ = 0.6 for a good balance between term frequency and u
 <td>2</td>
 <td>Dry fruits</td>
 <td>appl(e), cinnamon, pear, fig, fruit, core, tart, sugar, raisin, peel, fudg(e), prune, nutmeg, dot, apricot</td>
-<td>No idea what &quot;dot&quot; refers to. Other words: Apple, cinnamon, pear, fig, fruit, core, tart, sugar, raisin, peel, fudge, prune, nutmeg, dot, apricot, cranberry, granny, brown, slice, lemon, juice, pie, walnut, tablespoon, butter, sprinkle, pastry, water</td>
+<td>No idea what &quot;dot&quot; refers to. Also, I don't have a good name for this topic yet: it's mostly fruits I think of as less juicy (but not totally dried out!), and suitable for baking into something chrismassy alongside spides like cinnamon or nutmeg.</td>
 </tr>
 <tr>
 <td>3</td>
