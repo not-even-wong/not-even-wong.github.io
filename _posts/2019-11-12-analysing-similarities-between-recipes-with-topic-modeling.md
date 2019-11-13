@@ -88,7 +88,7 @@ To assign labels, I set λ = 0.6 for a good balance between term frequency and u
 <td>2</td>
 <td>Dry fruits</td>
 <td>appl(e), cinnamon, pear, fig, fruit, core, tart, sugar, raisin, peel, fudg(e), prune, nutmeg, dot, apricot</td>
-<td>No idea what &quot;dot&quot; refers to. Also, I don't have a good name for this topic yet: it's mostly fruits I think of as less juicy (but not totally dried out!), and suitable for baking into something chrismassy alongside spides like cinnamon or nutmeg.</td>
+<td>No idea what &quot;dot&quot; refers to. Also, I don't have a good name for this topic yet: it's mostly fruits I think of as less juicy (but not totally dried out!), and suitable for baking into something chrismassy alongside spices like cinnamon or nutmeg.</td>
 </tr>
 <tr>
 <td>3</td>
@@ -1084,3 +1084,5 @@ I'm more or less done with this project, but here are some avenues I'd like to e
   <li>Testing this on other databases - unfortunately, I'll need to find some way to label the recipes from other databases!</li>
   <li>Machine Learning: I've tried running artificial neural networks on the tf-idf values of the raw corpus (54000+ recipes) randomly split into training and testing sets, but I haven't been able to get above 75% accuracy on the test set. I have not tried doing this with the 35 topic weights instead of using thousands of word counts for each of the 54000+ recipes.</li>
   <li>Web functionality - would be cool if I could upload this on a server so that people can type in a recipe URL and it'll extract the text from that URL and try to guess what type of recipe it is.</li>
+
+p.s.- the picture I'm using for the thumbnail of this post is a photo of natto crepe. That's... fermented japanese soybean and sushi vinegar shortgrain rice on thin french egg pancake. I think the sauce was mayo and konbu. I look out for this every time I visit Kyoto, it's amazing. And very definitely Japanese - despite crepe being a French invention, egg dishes are really common in Japan. In fact, natto and rice, a traditional Japanese breakfast, is sometimes served with egg rolls (tamagoyaki). However, absolutely none of these are in the Japanese section of my recipe database, so clearly I need to collect more data.
