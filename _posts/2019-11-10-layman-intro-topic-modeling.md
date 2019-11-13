@@ -4,6 +4,7 @@ title: "A layman primer to topic modeling"
 date: 2019-11-10
 thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191110/20191110_thumb.png
 ---
+<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191110/20191110_thumb.png" style="width: 300px" class="border"></p>
 
 After deciding to put this portfolio together, I realised that not everyone knows what topic modeling is.
 
