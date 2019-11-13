@@ -17,9 +17,10 @@ layout: default
 	{% for post in site.posts %}
 	<div width="300px">
 		<a href="{{ post.url }}" title="{{ post.title }}">
-		<img src="{{ post.thumbnail }}" style="width: 300px">
+		<span>{{ post.date | date_to_string }}</span> » {{ post.title }}
 		<br>
-		<span>{{ post.date | date_to_string }}</span> » {{ post.title }}</a>
+		<p style="margin-left: 20px"><img src="{{ post.thumbnail }}" style="width: 300px"></p>
+		</a>
 		<br><br>
 	</div>
 	{% endfor %}
