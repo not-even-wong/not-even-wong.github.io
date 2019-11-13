@@ -7,7 +7,7 @@ thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.
 
 <p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png" style="width: 300px" class="border"></p>
 
-<div class="fineprint">The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
+<div class="fineprint">The Python code used for this post can be found here: <a href="https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py" target="_blank">https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
 
 <div class="fineprint">Images and tables are generally scrollable if not displayed in full.</div>
 
@@ -27,9 +27,7 @@ As an avid amateur chef , my best guess is that (other than sociocultural factor
 
 Ideally, I'd love to be able to interview countless chefs and diners to collate their thoughts about different cultural experiences. Ideally, I'd also love to have unlimited time and funding and research assistants. But we can't always get what we want.
 
-So I started my project by searching for a database of recipes that are conveniently labelled by origin or type. Eventually, I found this website:
-
-<a>https://www.recipesource.com/</a>
+So I started my project by searching for a database of recipes that are conveniently labelled by origin or type. Eventually, I found this website: <a href="https://www.recipesource.com/" target="_blank">https://www.recipesource.com/</a>
 
 Well, that's perfect! Every recipe here is already in text form, and categorised either by country of origin or type of food! 
 
@@ -63,9 +61,9 @@ So I went on to make use of topic modeling using the Gensim library. <a href="ht
 
 After some experimenting to decide the number of topics, I settled on 35 topics: too few resulted in topics not being specific enough; too many resulted in too much overlap between topics. I used pyLDAvis to visualise these topics:
 
-<a href="https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/pyLDAvis%20visual%20for%20upload.ipynb">View online</a>
+<a href="https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/pyLDAvis%20visual%20for%20upload.ipynb" target="_blank">View online</a>
 
-<a href="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/lda35.html">Download to desktop</a>
+<a href="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/lda35.html" target="_blank">Download to desktop</a>
 
 To assign labels, I set λ = 0.6 for a good balance between term frequency and uniqueness, and used the top 15 terms:
 
