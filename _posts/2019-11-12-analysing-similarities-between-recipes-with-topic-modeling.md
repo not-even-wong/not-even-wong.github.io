@@ -1063,7 +1063,7 @@ and these are the traits that can be used to differentiate between different kin
 </tbody></table>
 </div>
 
-At first glance it seems odd that "grains" are not higher up on the list of inter-cluster differentiating topics, since rice is so important to Asians. And "pasta" is there right next to grains. But if you look more closely, the "grains" topic also includes other kinds of grains, and you do have rice dishes around the world - so just rice alone isn't that good a differentiating factor for Asian food. And the "pasta" topic also includes the generic "noodle", as well as "prawn" and "sauce", which are pretty important for Asian food. More importantly, the use of sauce, sesame, and frying are really central to a lot of Asian foods.
+At first glance it seems odd that "grains" are not higher up on the list of inter-cluster differentiating topics, since rice is so important to Asians. And "pasta" is there right next to grains. But if you look more closely, the "grains" topic also includes other kinds of grains, and you do have rice dishes around the world - so just rice alone isn't that good a differentiating factor for Asian food. And the "pasta" topic also includes the generic "noodle", as well as "prawn" and "sauce", which are pretty important for Asian food. More importantly, the use of sauces in general, sesame, soy, and frying are really central to a lot of Asian foods.
 
 On the other hand, things like various breads, garlic, olive, fruits, desserts, baking, and cheeses are part of Asian cooking, but not all that common. So it would make sense that these are possible ways to differentiate between different types of Asian cooking.
 
