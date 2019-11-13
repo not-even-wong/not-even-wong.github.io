@@ -286,6 +286,7 @@ Now that I have a list of topics, I can use these to make sense of clustering. A
 <div style="height: 400px; width: 630px; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/topic%20distributions.png">
 </div>
+<div class="fineprint">(the data has been logarithmically scaled to provide better visualisation in the heatmap, since values can vary by orders of magnitude)</div>
 
 ...but that's a bit too much info to easily take in! That said, it <b><i>is</i></b> possible to see some basic trends in that heatmap.
 
