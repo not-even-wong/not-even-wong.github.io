@@ -15,7 +15,7 @@ Sometimes you hear people say things like "This doesn't taste authentic!"
 
 Ok, admittedly I don't really care so much about authenticity. To me, as long as it tastes good, I'm open to giving it a try... sometimes to disastrous results, according to people I cook for.
 
-But when producing creative work, you need to be aware of the cultural literacies of your audience, and cooking is no different. People engage with meals like they do any other experience: bringing a whole lot of baggage and associations. Their experience of the meal is going to be influenced by the lens of their shared experiences. Cooking is a conversation between the chef and the diner through, and across, the language of culture.
+But when producing creative work, you need to be aware of the cultural literacies of your audience, and cooking is no different. People engage with meals like they do with any other experience: bringing a whole lot of baggage and associations. Their experience of the meal is going to be influenced by the lens of their shared experiences. Cooking is a conversation between the chef and the diner through, and across, the language of culture.
 
 So then what makes something authentic? What's the culinary equivalent of a national accent and phenotype?
 
