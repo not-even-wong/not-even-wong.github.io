@@ -2,6 +2,7 @@
 layout: post
 title: "Analysing similarities between recipes with topic modeling"
 date: 2019-11-12
+thumbnail: /20191112/20191112_thumb.png
 ---
 <div class="fineprint">The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
 
