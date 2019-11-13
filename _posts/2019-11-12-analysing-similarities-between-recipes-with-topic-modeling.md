@@ -459,7 +459,7 @@ and then I calculated the means weights of each topic for the categories within 
 
 I'd think of these as the inter-cluster differentiating topics: they help to distinguish between clusters.
 
-Here's the result presented in a heatmap (with more interpretation further down...)"
+Here's the result presented in a heatmap (with more interpretation further down...)
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/topics%20of%20clusters.png">
 <div class="fineprint">(again, the data for this heatmap and the next has been logarithmically scaled to provide better visualisation in the heatmap, since values can vary by orders of magnitude)</div>
