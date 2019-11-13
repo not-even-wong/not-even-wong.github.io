@@ -3,9 +3,9 @@ layout: post
 title: "Analysing similarities between recipes with topic modeling"
 date: 2019-11-12
 ---
-<i>The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></i>
+<div class="fineprint">The Python code used for this post can be found here: <a>https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
 
-<i>Images and tables are generally scrollable if not displayed in full.</i>
+<div class="fineprint">Images and tables are generally scrollable if not displayed in full.</div>
 
 I'm a Singaporean, which means that appreciating the vast diversity of food is a way of life for me. Growing up in a melting pot of cultures and travelling overseas to savour the taste of various local delicacies does that for you.
 
