@@ -9,6 +9,8 @@ I'm a Singaporean, which means that appreciating the vast diversity of food is a
 
 Sometimes you hear people say things like "This doesn't taste authentic!" 
 
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/authenticity.png" width=50%>
+
 Well, then what makes something authentic? As an avid amateur chef, my best guess is that (other than sociocultural factors such as who's cooking it and where you're eating it) it's in the ingredients and cooking methods. For example, I don't expect to see Chinese recipes call for letting dough rise before baking, and neither do I expect to see thinly sliced raw fish in American recipes. But I'd like to quantify this.
 
 Ideally, I'd love to be able to interview countless chefs and diners to collate their thoughts about different cultural experiences. Ideally, I'd also love to have unlimited time and funding and research assistants. But we can't always get what we want.
