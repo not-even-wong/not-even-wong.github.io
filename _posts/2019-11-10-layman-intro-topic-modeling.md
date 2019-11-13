@@ -2,6 +2,7 @@
 layout: post
 title: "A layman primer to topic modeling"
 date: 2019-11-10
+thumbnail: /20191110/20191110_thumb.png
 ---
 
 After deciding to put this portfolio together, I realised that not everyone knows what topic modeling is.
