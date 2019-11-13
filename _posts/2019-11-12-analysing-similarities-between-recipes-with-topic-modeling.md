@@ -125,7 +125,7 @@ To assign labels, I set λ = 0.6 for a good balance between term frequency and u
 <tr>
 <td>9</td>
 <td>Egg &amp; dairy</td>
-<td>egg, yolk, butter, custard, milk, popcorn, mixture, white, stir, heat, whisk, melt, cream, beaten, sauc€</td>
+<td>egg, yolk, butter, custard, milk, popcorn, mixture, white, stir, heat, whisk, melt, cream, beaten, sauc(e)</td>
 <td>Not sure why popcorn is in this list. The only possible reason I can find is that popcorn recipes tend to use butter.</td>
 </tr>
 <tr>
@@ -204,18 +204,18 @@ To assign labels, I set λ = 0.6 for a good balance between term frequency and u
 <td>22</td>
 <td>Preservation</td>
 <td>jar, pint, ft, canner, canning, pressu(re), process, pickl(e), tabl(e), lid, recommend, altitud(e), quart, pound, headspac(e)</td>
-<td>Suspect that &quot;altitud(e)&quot; and &quot;headspac(e)&quot; are personal terms (e.g. &quot;taking time to can gives you headspace). 17th and 19th on the list are &quot;Steril(e)&quot; and &quot;USDA&quot;, which would be important for DIY canning.</td>
+<td>I learned something new here! Altitude is important for cooking due to the pressure differences, especially for processed foods, and headspace refers to the air gap between the preserved food and the top of the container it's being stored in. 17th and 19th on the list are &quot;Steril(e)&quot; and &quot;USDA&quot;, which would be important for DIY canning.</td>
 </tr>
 <tr>
 <td>23</td>
 <td>Cheese (hot)</td>
 <td>chees(e), cheddar, macaroni, broccoli, quich(e), shred, grate, bisquick, parmesan, cup, prepar(e), swiss, egg, zucchini, bake</td>
-<td>The vegetables on this list are commonly used in quiche or casseroles (18th on the list). No idea why Bisquick is on this list; perhaps it&#39;s a common ingredient for quiches or casseroles as well.</td>
+<td>The vegetables on this list are commonly used in quiche or casseroles (18th on the list). Bisquick is common for baked products.</td>
 </tr>
 <tr>
 <td>24</td>
 <td>Meat</td>
-<td>meat, beef, sauc(e), teaspoon, pork, ground, worchestershir(e), meatbal(l), tablespoon, pepper, patt(y), marinad(e), garlic, barbecu€</td>
+<td>meat, beef, sauc(e), teaspoon, pork, ground, worchestershir(e), meatbal(l), tablespoon, pepper, patt(y), marinad(e), garlic, barbecu(e)</td>
 <td> </td>
 </tr>
 <tr>
@@ -240,7 +240,7 @@ To assign labels, I set λ = 0.6 for a good balance between term frequency and u
 <td>28</td>
 <td>Mediterranian</td>
 <td>oliv(e), pasta, basil, oil, garlic, tomato, fresh, italian, parsley, pepper, herb, parmesan, pine, virgin, chop</td>
-<td>&quot;Pine&quot; probably refers to pine nuts, used in pesto (17th on the list). &quot;virgin&quot; refers to the olive oil.</td>
+<td>&quot;Pine&quot; probably refers to pine nuts, used in pesto (17th on the list) or on its own (quite common in mediterranian food). &quot;virgin&quot; most likely refers to the olive oil and not the chef.</td>
 </tr>
 <tr>
 <td>29</td>
@@ -286,9 +286,9 @@ To assign labels, I set λ = 0.6 for a good balance between term frequency and u
 </tr>
 </tbody></table>
 </div>
-Before we move on, I'd like to point out the various topics devoted to the subtle differences between various dough products and various fruit products! I'm finding this very fascinating. It seems like there are actually enough textual cues in the recipes for the algorithm to be able to differentiate between breads, flatbreads, cakes; chocolatey vs sugary vs savoury; and so on...  and as for fruits, you might noticed there's a topic with apples, pears and figs that I've called "dry fruits" for the want of a better word - that sounds like stuff you'd put together into a Christmas pie! 
+Before we move on, I'd like to point out the various topics devoted to the subtle differences between various dough products and various fruit products! I'm finding this very fascinating. It seems like there are actually enough textual cues in the recipes for the algorithm to be able to differentiate between breads, flatbreads, cakes; chocolatey vs sugary vs savoury; and so on...  and as for fruits, you might noticed there's a topic with apples, pears and figs that I've called "dry fruits" for the want of a better word - that sounds like stuff you'd put together into a Christmas pie! And that's in contrast to the tart fruits you'd add to yogurt in the fresh fruits topic, or pumpkin and peanut with dairy products under 'sweet desserts', or the stuff you'd put in a fruit tart. 
 
-And that's in contrast to the tart fruits you'd add to yogurt in the fresh fruits topic, or pumpkin and peanut with dairy products under 'sweet desserts', or the stuff you'd put in a fruit tart. In contrast, surprisingly, my model didn't manage to differentiate much between different kinds of meat, such as pork, beef, lamb, and so on. My guess is that this is probably due to the dataset being imbalanced: I have a massive number of recipes under baked goods, sweets, and fruit products, but relatively few meat-based recipes in the corpus.
+Surprisingly, my model didn't manage to differentiate much between different kinds of meat, such as pork, beef, lamb, and so on. My guess is that this is probably due to the dataset being imbalanced: I have a massive number of recipes under baked goods, sweets, and fruit products, but relatively few meat-based recipes in the corpus.
 
 Alright, so now that I have a list of topics, I can use these to make sense of clustering. As with my earlier attempt, I merged all documents within each category of recipes into a single long document. I then used gensim's LDA model to assign weights for each topic for each document. This can be visualised in a heatmap...
 
