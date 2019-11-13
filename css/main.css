@@ -47,6 +47,7 @@ a:hover {
 }
 .h2 {
     font-size: 1.8em;
+    text-decoration: underline;
 }
 .h1 {
     font-size: 1.4em;
