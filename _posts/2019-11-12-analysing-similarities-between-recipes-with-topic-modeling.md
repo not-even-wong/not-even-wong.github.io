@@ -1082,6 +1082,7 @@ I'm more or less done with this project, but here are some avenues I'd like to e
   <li>Testing this on other databases - unfortunately, I'll need to find some way to label the recipes from other databases!</li>
   <li>Machine Learning: I've tried running artificial neural networks on the tf-idf values of the raw corpus (54000+ recipes) randomly split into training and testing sets, but I haven't been able to get above 75% accuracy on the test set. I have not tried doing this with the 35 topic weights instead of using thousands of word counts for each of the 54000+ recipes.</li>
   <li>Web functionality - would be cool if I could upload this on a server so that people can type in a recipe URL and it'll extract the text from that URL and try to guess what type of recipe it is.</li>
+</ul>
   
 Please do send me any questions or feedback you might have using the contact form below!
 
