@@ -15,7 +15,7 @@ As a physics teacher who grew up on the internet, I'm well aware of the many res
 
 These forums are a huge source of data! I wanted to find out what topics students were asking about, and discern patterns about their asking habits.
 
-For this attempt, I used data from <a href="https://www.physicsforums.com/forums/introductory-physics-homework-help.153/" target="_blank">https://www.physicsforums.com/forums/introductory-physics-homework-help.153/</a>. Physicsforums.com is one of the biggest and oldest still-active forum, and quite often, when searching for information about particular high-school to undergrad topics in physics, I see posts from this forum turn up among the top search results. I decided to focus only on the "introductory physics homework help" section since the terms are likely to be less complex to analyse than higher level content - especially the use of formula and symbols.
+For this attempt, I used data from <a href="https://www.physicsforums.com/forums/introductory-physics-homework-help.153/" target="_blank">https://www.physicsforums.com/forums/introductory-physics-homework-help.153/</a>. Physicsforums.com is one of the biggest and oldest still-active forums, and quite often, when searching for information about particular high-school to undergrad topics in physics, I see posts from this forum turn up among the top search results. I decided to focus only on the "introductory physics homework help" section since the terms are likely to be less complex to analyse than higher level content - especially the use of formula and symbols.
 
 Ah, yes. Formula and symbols. That was possibly the worst part of this analysis.
 
