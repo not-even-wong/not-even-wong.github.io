@@ -425,7 +425,7 @@ So it seems like the topic weights don't really affect thread popularity, but mo
 My second goal was to determine whether any trends can be seen over time for each topic. Hence, I aggregated the average weight of each topic for each month, and then plotted these average weights over time... 
 
 <img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/topic%20weights%20over%20time.png">
-<div class="fineprint">(each of the 60 topics has a slightly different colour; it would be impossible to deduce relationships directly from this graph, but it's meant to give a quick overview to try to spot trends)</div>
+<div class="fineprint">(each of the ~60 topics has a slightly different colour; it would be impossible to deduce relationships directly from this graph, but it's meant to give a quick overview to try to spot trends)</div>
 
 It doesn't look like there are any long term trends. But wait! Some of those lines look like they're periodic in nature! 
 The blue, green, and purple data with the largest average weights are quite clearly periodic, and if you look carefully, other lines look periodic too.
