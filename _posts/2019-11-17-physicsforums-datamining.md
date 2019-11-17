@@ -363,16 +363,87 @@ So I had a dilemma. I wanted to increase the number of topics to get all the pos
 
 Looking at these topics, it's surprising how cleanly they correspond to actual physics topics in the syllabus. In fact, I've noticed that when using a smaller number of topics for the model, I get more general topics from the syllabus, and when increasing the number of topics, they do split nicely into actual subtopics from the syllabus. This isn't surprising since a lot of the actual topics from the syllabus have similar terms. On the other hand, that also makes it harder to use latent dirichlet allocation (LDA) to generate topic models.
 
-<hr>
+Out of these topics, they can broadly be split into physics knowledge/techniques (n=40), math skills or notation (n=13), filler (n=4) and advertisments/irrelevant (n=4).
 
-<b>Objective 1: determine relationship between topics and thread views or replies</b>
+The filler category is particuarly interesting:
+<ul>
+<li>Multiple choice options (A, B, C, D, and other related terms).</li>
+<li>Attached files and formats.</li>
+<li>Requests for clarification (e.g. "why", "say", "mean", etc.)</li>
+<li>Talking about school (e.g. "test", "exam", "class").</li>
+</ul>
 
+I'm actually really surprised that these came up as topics of their own! I guess that shows how significant and relevant these are when high school students ask for homework help online.
 
+<b>Objective 1: determine factors affecting thread views or replies</b>
 
+Since I only had data from 2003 to 2012, and I scraped the data in 2019, it becomes hard to see long term trends. I suspect that thread views and replies tend to level off over time, so all posts past a certain age become stagnant. This is reflected in the following scatterplots:
 
-# outliers with exceptionally large number of views are:
-# converting-converting-km-hr-to-m-s.200055
-# tension-formula.329194
-# need-egg-drop-project-ideas.186507
-# find-spring-constant-of-spring-in-n-m-help.99506
-# phase-difference-mutual-inductor.526105
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/plot%20replies%20against%20age.png">
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/plot%20views%20against%20age.png">
+
+That said, you can see that in the early days of the forum, activity took a while to ramp up. I attribute this to a smaller forum population during the first few years leading to less views and replies.
+
+There are some threads with an exceptionally large number of views. The top 5 are:
+<ul>
+  <li>converting km/hr to m/s</li>
+  <li>tension formula</li>
+  <li>need egg drop project ideas</li>
+  <li>find spring constant of spring in n/m help</li>
+  <li>phase difference mutual inductor</li>
+</ul>
+
+The first 4 are indeed incredibly common questions. I can see why they'd have the most views if they turn up quite high up in google results - it's a vicious cycle once it hits critical mass.
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/google%20screenshot.png">
+
+I also attempted to deduce a relationship between views and replies:
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/correlation%20-%20views%20against%20replies.png">
+
+Well... that doesn't look very good. My theory is that replies definitely plateau quite early since there's only so much that can be said constructively about a particuarly question. However, even after replies have stopped, the thread will continue to acquire views, as long as it stays relevant on Google searches.
+
+Then, what about the relationship between thread topic and thread views or replies?
+
+Each thread has weights for each topic indicating how strongly that thread relates to that topic. I tried to correlate each topic's weight against the views and replies. The result? The largest <i>R<sup>2</sup></i> is 0.42, followed by 0.29, and vast majority of topics pretty much have negligible amounts. It's not hard to see why, when every single scatterplot of views or replies against topic weight looks something like this:
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/correlation%20-%20replies%20against%20gauss%20law.png">
+
+What about correlations between topics? After removing the advertisments, this is what the correlation matrix between topic weights looks like:
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/correlation%20remove%20spam.png">
+
+and the "most correlated" topics have scatterplots that look like these:
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/correlation%20-%20rotational%20motion%20against%20moment%20of%20inertia.png">
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/correlation%20-%20differentiation%20against%20calculus.png">
+
+So it seems like the topic weights don't really affect thread popularity, but more surprisingly, I couldn't find any strong correlation between different topics. I would have thought that some topics would tend to crop up together (e.g. a student talking about electric fields would be likely to also talk about electroc potentials). My suggested explanation for this lack of trend is that while this may be true for more general discussions of a topic in the syllabus, on the homework help forum, students tend to ask isolated questions (e.g. "How do I calculate the electric field of this setup?"). Therefore, the results wouldn't show a strong relationship between different topics.
+
+<b>Objective 2: observe trends for topics over time</b>
+
+My second goal was to determine whether any trends can be seen over time for each topic. Hence, I aggregated the average weight of each topic for each month, and then plotted these average weights over time... 
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/topic%20weights%20over%20time.png">
+<div class="fineprint">(each of the 60 topics has a slightly different colour; it would be impossible to deduce relationships directly from this graph, but it's meant to give a quick overview to try to spot trends)</div>
+
+It doesn't look like there are any long term trends. But wait! Some of those lines look like they're periodic in nature! 
+The blue, green, and purple data with the largest average weights are quite clearly periodic, and if you look carefully, other lines look periodic too.
+
+I aggregated the average weight of each topic by month (i.e. all Januaries, all Februaries, etc.) and plotted them. To make the trends more obvious, I normalised them between 0 to 2 and then squared the values, so the peaks will stand out more:
+
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/topic%20weights%20by%20month.png">
+
+That definitely looks periodic. I've also uploaded all the individual (un-normalised) graphs to this album for you to peruse at your casual pleasure: <a href="https://imgur.com/a/lmNukMr">https://imgur.com/a/lmNukMr</a>
+
+I would attribute these periodic trends to the time of the year that it is being taught. I expect to see at least two peaks, one for schools in English-speaking countries where the school year starts in August, and another for those starting in January. This is true for a lot of thee graphs.
+
+To test this suggestion, I tried doing clustering <i><b>based on the months where these topics have greater average weights</b></i>:
+
+<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/topics%20clustered%20by%20which%20months%20they%20appear%20in%20copy.jpg">
+</div>
+
+I've labelled those topics that I know are related in the syllabus. This is quite a nice result! It looks like topics that surface around the same time of the year each year indeed tend to be topics that should be taught together in the syllabus, so I think it's likely that trends in thread topics are driven by what topic is currently being taught in school for the month.
+
+That's all the analysis I can think of for this dataset. I'd like to fix my scraping algorithm and re-run the data, but it takes several days to scrape everything, during which I can't do any other projects, so I'll put this on the back burner for now. I didn't manage to obtain any relationships affecting thread popularity, but the monthly topic trends are quite interesting. If you've any suggestions, please feel free to contact me using the form below!
