@@ -29,7 +29,7 @@ However, something rather nice turned up. I was worried about the use of greek l
 
 Furthermore, while doing my scraping, I didn't find any convenient way to remove some advertisments between posts. I cut out all the other parts of the page, but every thread had a 'post' between two actual posts that was simply a link to three other threads on the forum that they decided was interesting. I removed some of the more obvious words from my analysis (in particular, "birdsong", "el nino", "warming", "acid" were advertisments that appeared on a huge number of my posts). Some of these were harder to remove, though - for example, "birdsong" is clearly not a common physics term, but "plates" could be commonly used in physics. I didn't remove these yet, and they ended up being attributed to a few topics. I can then just ignore these topics in my later analysis.
 
-Well, that's enough about the text analysis. I tried, but frankly the data here will be slightly noisy. Here's the outcome of the topic modeling:
+Given that I can't really remove some of these terms easily, the data here might be slightly noisy. Here's the outcome of the topic modeling:
 
 <a href="https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191117/pyLDAvis_physicsforums_topics.ipynb" target="_blank">View online</a>
 
