@@ -1,0 +1,35 @@
+---
+layout: post
+title: "Online physics homework help: what, when and how?"
+date: 2019-11-12
+thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png
+---
+
+<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png" style="width: 300px" class="border"></p>
+
+<div class="fineprint">The Python code used for this post can be found here: <a href="https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py" target="_blank">https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
+
+<div class="fineprint">Images and tables are generally scrollable if not displayed in full.</div>
+
+As a physics teacher who grew up on the internet, I'm well aware of the many resources available to students online. One key aspect of this is the availability of help through forums (and more recently through social media or homework help apps).
+
+These forums are a huge source of data! I wanted to find out what topics students were asking about, and discern patterns about their asking habits.
+
+For this attempt, I used data from <a href="https://www.physicsforums.com/forums/introductory-physics-homework-help.153/" target="_blank">https://www.physicsforums.com/forums/introductory-physics-homework-help.153/<a>. Physicsforums.com is one of the biggest and oldest still-active forum, and quite often, when searching for information about particular high-school to undergrad topics in physics, I see posts from this forum turn up among the top search results. I decided to focus only on the "introductory physics homework help" section since the terms are likely to be less complex to analyse than higher level content - especially the use of formula and symbols.
+
+Ah, yes. Formula and symbols. That was possibly the worst part of this analysis.
+
+Over three days, I scraped all the data that I could get hold of from the forum. For some reason my script missed out a lot of the data from 2012 onwards, so I decided to just settle for the earliest decade of data for now to get some preliminary results. I used all the data I had (i.e. all 2003 - 2012, and the sparse data from 2012 - 2019) to do topic modeling, but only analysed the posts from 2003 - 2012.
+
+Let's talk about cleaning. Usually, this isn't a very difficult process: remove typos, websites, maybe names, things that aren't going to be relevant to the analysis process. But in physics (and chemistry or math) you can expect to see a lot of single letters and symbols. Is a standalone "k" a typo? Or does it refer to the spring constant, or some other coefficient? It's really hard to tell. That's why I limited my raw data to just introductory physics, since the range of common uses for each symbol is reduced. Furthermore, I'd expect most students to just try to follow common conventions for symbols (e.g. <i>m</i> for mass, <i>a</i> for acceleration, and write Newton's 2nd Law as "<i>F</i>=<i>ma</i>").
+
+When trying to assign labels for the topics I obtained through topic modeling, I tried to match letters (or combinations of letters - e.g. based on the context of the other words in a topic, I assumed "ma" to refer to Newton's 2nd Law rather than someone's mother). This took quite some effort and I had to think quite hard about the syllabus I had taught for several years. Surprisingly, it's easy to recognise and use symbols in context, but when you're staring at a collection of words and symbols, it can sometimes take a bit of effort to guess what they mean.
+
+However, something rather nice turned up. I was worried about the use of greek letters and special symbols; however, this forum integrates <a href="https://en.wikibooks.org/wiki/LaTeX" target="_blank">TeX</a>
+
+# outliers with exceptionally large number of views are:
+# converting-converting-km-hr-to-m-s.200055
+# tension-formula.329194
+# need-egg-drop-project-ideas.186507
+# find-spring-constant-of-spring-in-n-m-help.99506
+# phase-difference-mutual-inductor.526105
