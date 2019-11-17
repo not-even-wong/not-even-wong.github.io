@@ -2,12 +2,12 @@
 layout: post
 title: "Online physics homework help: what, when and how?"
 date: 2019-11-12
-thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png
+thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/20191117_thumb.png
 ---
 
-<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191112/20191112_thumb.png" style="width: 300px" class="border"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20191117/20191117_thumb.png" style="width: 300px" class="border"></p>
 
-<div class="fineprint">The Python code used for this post can be found here: <a href="https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py" target="_blank">https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191112/recipe-analysis.py</a></div>
+<div class="fineprint">The Python code used for this post can be found here: <a href="https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191117/physics_help_analysis.py" target="_blank">https://github.com/not-even-wong/not-even-wong.github.io/blob/master/_posts/20191117/physics_help_analysis.py</a></div>
 
 <div class="fineprint">Images and tables are generally scrollable if not displayed in full.</div>
 
@@ -359,4 +359,20 @@ You might have noticed that topic 61 doesn't appear in the pyLDAvis visualisatio
 <li>On the other hand, increasing the number of topics also increased the number of 'junk' meaningless topics.</li>
 </ul>
 
-So I had a dilemma. I wanted to increase the number of topics to get all the possible relevant topics to appear at once. However, the amount of nonsense also increased. The particular run I've uploaded here has 56 relevant topics out of 60, and has almost all the topics that I identified as relevant from previous rounds...except "Rotational motion" (which I think got absorbed into some of the related topics). Since this data is primarily for me to reduce the dimensionality of the original data and identify trends in the posts, I decided that it would be ok if I used this set of 60 topics, ignored the 4 irrelevant topics, and added 1 topic from another model. Of course, the weights won't be balanced properly, but since I was going to normalise all the weights anyway, I just left it this way.
+So I had a dilemma. I wanted to increase the number of topics to get all the possible relevant topics to appear at once. However, the amount of nonsense also increased. The particular run I've uploaded here has 56 relevant topics out of 60, and has almost all the topics that I identified as relevant from previous rounds...except "Rotational motion" (which I think got absorbed into some of the related topics). Since this data is primarily for me to reduce the dimensionality of the original data and identify trends in the posts, I decided that it would be ok if I used this set of 60 topics, ignored the 4 irrelevant topics, and added 1 topic from another model. Of course, the weights won't be balanced properly, but since I was going to normalise all the weights anyway, and I'm not comparing the proportion of weights <i>for each individual document</i> I think that's fine.
+
+Looking at these topics, it's surprising how cleanly they correspond to actual physics topics in the syllabus. In fact, I've noticed that when using a smaller number of topics for the model, I get more general topics from the syllabus, and when increasing the number of topics, they do split nicely into actual subtopics from the syllabus. This isn't surprising since a lot of the actual topics from the syllabus have similar terms. On the other hand, that also makes it harder to use latent dirichlet allocation (LDA) to generate topic models.
+
+<hr>
+
+<b>Objective 1: determine relationship between topics and thread views or replies</b>
+
+
+
+
+# outliers with exceptionally large number of views are:
+# converting-converting-km-hr-to-m-s.200055
+# tension-formula.329194
+# need-egg-drop-project-ideas.186507
+# find-spring-constant-of-spring-in-n-m-help.99506
+# phase-difference-mutual-inductor.526105
