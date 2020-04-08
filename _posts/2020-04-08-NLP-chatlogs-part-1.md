@@ -7,7 +7,7 @@ thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.
 
 <p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20200408/20200408_thumb.jpg" style="width: 300px" class="border"></p>
 
-I haven't made any new posts for several months. That's in part because things were getting busy. Other than my regular workload, I had the opportunity to work with a company that runs an online university course on <a href="https://en.unesco.org/themes/futures-literacy" target="_blank">Futures Literacy</a>. I spent the past few months developing, refining, and implementing online interaction methods and content delivery, and designing assessment and evaluation tools for the course. Now that the course is coming to an end, I'm shifting more towards data analysis using student work during the course.
+I haven't made any new posts since November. That's in part because things were getting busy. Other than my regular workload, I had the opportunity to work with a team that runs an online university course on <a href="https://en.unesco.org/themes/futures-literacy" target="_blank">Futures Literacy</a>. I spent the past few months developing, refining, and implementing online interaction methods and content delivery, and designing assessment and evaluation tools for the course. Now that the course is coming to an end, I'm shifting more towards data analysis using student work during the course.
 
 I want to write about what I'm doing, but it's tricky because of privacy and data protection. Most likely it'll be ok to discuss my approaches and their limitations, and show some of the aggregated results, but I can't show any specific posts, and especially can't reveal any personal information. I'm worried about displaying code also, because it might show some specific info, but I might consider uploading the code with things like stopwords blanked out.
 
@@ -19,9 +19,11 @@ With this disclaimers aside, I'll jump in and talk about the work I'm doing. The
 <li>Feedback surveys</li>
 </ol>
 
-Each of those is a pretty big endeavour on its own. I've only done some preliminary work on the blogposts, and the survey results are not in yet, but I'll be talking about what I've been doing with the discussion sessions. As part of the course requirements, all students are required to sign up for a 1-hour slot each week to discuss that week's content. These sessions are driven by a facilitator based on a rough script, and centered around 2-3 key questions or themes. 
+Each of those is a pretty big endeavour on its own. Part of the steep learning curve was figuring out how to properly parse the Slack chat export API, as well as writing a script to scrape blogposts using the Edublogs RSS API. The latter wasn't too bad, but the former... for some reason, Slack chooses to nest dictionaries in dictionaries and include redundancies - after some staring, I realised the API essentially includes both the message information as well as a duplicate of that information but presented in terms of how it should be displayed on the screen. I don't understand why - it would probably be more streamlined to just include the raw information and let the software handle display client-side. Other than that, I wrote a script to take attendance and track student work completion by matching blogposts to names and topics, which I'll talk about in another post, and then take attendance by getting activity statistics for blogposts and forums.
 
-My objective was to find some way to characterise the discussion: what are the students talking about? Once that's done, I can then automate extraction of information. For example, how do the discussion themes shift over the course of each session or across various weeks? 
+As for analysis, I've only done some preliminary work on the blogposts, and the survey results are not in yet, but I'll be talking about what I've been doing with the discussion sessions. 
+
+As part of the course requirements, all students are required to sign up for a 1-hour slot each week to discuss that week's content. These sessions are driven by a facilitator based on a rough script, and centered around 2-3 key questions or themes. My objective was to find some way to characterise the discussion: what are the students talking about? Once that's done, I can then automate extraction of information. For example, how do the discussion themes shift over the course of each session or across various weeks? 
 
 <b><u>Characterising the discussion</u></b>
 
