@@ -16,7 +16,7 @@ I want to write about what I'm doing, but it's tricky because of privacy and dat
 With this disclaimers aside, I'll jump in and talk about the work I'm doing. There's three key components of student work that I'm analysing:
 
 <ol>
-<li>Weekly online live discussion sessions, using Slack</li>
+<li>Weekly online live discussion sessions, using Slack (essentially a private chatroom)</li>
 <li>Weekly blogposts, using Edublogs (which runs on Wordpress)</li>
 <li>Feedback surveys</li>
 </ol>
