@@ -72,7 +72,10 @@ Another approach that might have been useful would be to try to characterise the
 
 Firstly, this approach would give me hard clusters. However, while LDA failed since the short texts violate the assumption that each text contains multiple topics, this does not mean that <b><i>all</i></b> texts only have one topic. Furthermore, some texts would have no relevant topic: there are a lot of messages saying things like "I agree!". I didn't think it was appropriate for that to skew my results. In fact, when I did a trial run anyway, I did obtain a cluster containing only variants of "Good morning". Admittedly, I'm probably also slightly biased, since in my experience, clustering word vectors often doesn't seem to give me good results.
 
-In addition, I wasn't sure what kind of word vectors would be appropriate. Since each text is really short, a small absolute variation in term frequency is a large percentage variation. In the end, I went with tf-idf, but using a sublinear tf (i.e. each additional count has a decreasing contribution to the term frequency score).
+In addition, I wasn't sure what kind of word vectors would be appropriate. Since each text is really short, a small absolute variation in term frequency is a large percentage variation. In the end, I went with tf-idf, but using a sublinear tf (i.e. each additional count has a decreasing contribution to the term frequency score). You can see what that looks like here: <a href="https://www.wolframalpha.com/input/?i=1%2Blog%28x%29+from+0+to+100" target="_blank">https://www.wolframalpha.com/input/?i=1%2Blog%28x%29+from+0+to+100</a>
+
+<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20200408/3%20sublinear%20tf.png" class="border"></p>
+
 
 I did try it out, anyway, and while clustering the word vectors did give me some recognisable topics, I felt that it was not precise enough.
 
