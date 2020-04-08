@@ -96,7 +96,7 @@ In the end, I settled on 8 topics:
 </tr></thead>
 <tbody><tr>
 <td align="right">1</td>
-<td>Automation of work</td>
+<td>Automation of work (negative)</td>
 <td>AI, work, increas(e), job, think, robot, drug, worker, human, replac(e), incom(e)</td>
 </tr>
 <tr>
@@ -116,12 +116,12 @@ In the end, I settled on 8 topics:
 </tr>
 <tr>
 <td align="right">5</td>
-<td>Democracy</td>
+<td>Society and politics</td>
 <td>Think, peopl(e), media, democrac(y), social, use, polit(ics), view, data, good, govern</td>
 </tr>
 <tr>
 <td align="right">6</td>
-<td>Automation of work</td>
+<td>Automation of work (positive)</td>
 <td>Job, think, work, human, AI, futur(e), machin(e), excit(e), replac(e), develop, labour</td>
 </tr>
 <tr>
@@ -136,10 +136,38 @@ In the end, I settled on 8 topics:
 </tr>
 </tbody></table>
 
-Do note that the topic labeling was informed by my experience working on the content: the scriptwriting process, as well as observing or facilitating each session, allowed me to recognise exactly which aspects of the discussion these topics come from. To verify these topics, I viewed the top weighted messages for each topic, and found that they indeed were discussing that topic.
+Do note that the topic labeling was informed by my experience working on the content: the scriptwriting process, as well as observing or facilitating each session, allowed me to recognise exactly which aspects of the discussion these topics come from. To verify these topics, I viewed the top weighted messages for each topic, and found that they indeed were discussing that topic. I can't show messages in general, but just as an example, here's one of my own messages made as a facilitator:
 
-Topics 1 and 6 have a heavy overlap (which can be seen in the pyLDAvis visualisation). However, when I tried reducing the number of topics and changing the random seed, other topics vanished instead of having 1 and 6 merge. While the other topics have some overlap, I feel that they are distinct enough that they should be preserved. Therefore, I left it as 8 topics with 1 and 6 overlapping.
+"It's interesting to note that in all eras, films (and other forms of media) have explored society's fears. Right now, we're worried about tech, so tech apocalypses have featured prominently"
 
-I also noted that these were very general topics. It is especially evident when viewing the top posts for each topic. For example, viewing the top posts about automation of work shows posts discussing it in various contexts or with different opinions, and I do want to be able to obtain data on that. However, increasing the number of topics in gensim simply returned more duplicates of these 7 key topics, so I'd have to use a different method - this will be discussed in a future post!
+and this particular message has the following scores:
+
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Topic 1</th>
+<th title="Field #2">Topic 2</th>
+<th title="Field #3">Topic 3</th>
+<th title="Field #4">Topic 4</th>
+<th title="Field #5">Topic 5</th>
+<th title="Field #6">Topic 6</th>
+<th title="Field #7">Topic 7</th>
+<th title="Field #8">Topic 8</th>
+</tr></thead>
+<tbody><tr>
+  <td align="right"><b>0.429</b></td>
+<td align="right">0.008</td>
+<td align="right">0.008</td>
+<td align="right">0.008</td>
+  <td align="right"><b>0.521</b></td>
+<td align="right">0.008</td>
+<td align="right">0.008</td>
+<td align="right">0.008</td>
+</tr>
+</tbody></table>
+
+I found this message by displaying only messages from myself, and sorting it in descending order of Topic 1 weights. You can see that the model picked up on the mention of society, allocating this message to topic 5. But in addition, it managed to allocate the message to topic 1. Although topic 1 was predominantly about automation of work and replacement of jobs, during the discussion, topic 1 also had the theme of being worried about the future as a result of this automation. While this was nowhere near any of the top words for topic 1, the model was able to confidently allocate this message to topic 1 instead of topic 6, which had a very similar choice of words. This was also somewhat reflected by skimming the top weighted posts for topics 1 and 6 respectively. Topic 1 tended towards negative to neutral views on the future, while topic 6 emphasizes neutral to positive views (although some subtle posts still slipped through the gaps).
+
+Otherwise, topics 1 and 6 have a heavy overlap (which can be seen in the <a href="https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20200408/pyLDASvis preview 8 topics.ipynb" target="_blank">pyLDAvis visualisation at https://nbviewer.jupyter.org/github/not-even-wong/not-even-wong.github.io/blob/master/_posts/20200408/pyLDASvis preview 8 topics.ipynb</a>). However, I thought it was appropriate to keep both topics due to the subtle difference discussed above. In addition, when I tried reducing the number of topics and changing the random seed, other topics vanished instead of having 1 and 6 merge, and while the other topics have some overlap, I feel that they are distinct enough that they should be preserved. Therefore, I left it as 8 topics.
+
+In addition, these were very general topics. It is especially evident when viewing the top posts for each topic. For example, viewing the top posts about automation of work shows posts discussing it in various contexts or with different opinions, and I do want to be able to obtain data on that. However, increasing the number of topics in gensim simply returned more duplicates of these 7 key topics, so I'd have to use a different method - this will be discussed in a future post!
 
 So far, I've tried using various methods to deal with the short text problem, and in the end, it looks like traditional LDA still worked the best - albeit with a slight variation to the input. Now that I'm able to characterise each short text based on what broad themes it's talking about, I can use that to describe the conversation. However, I'm not done with that analysis - so that'll come in a part 2!
