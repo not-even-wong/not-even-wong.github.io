@@ -83,7 +83,7 @@ The other thing I tried with word vectors was to attempt to find cosine similari
 
 However, I realised that the online content was mostly delivered through videos, with some introductory texts linking the videos together. I tried this with the introductory text anyway, and found no meaningful relationship between the discussions and introductory texts, which was to be expected.
 
-<b><u>What I did in the end</u></b>
+<b><u>How I finally managed to characterise the chatlogs...</u></b>
 
 Eventually, while discussing this project with a friend who worked on analysing Reddit posts, that friend recommended concatenating messages made by the same user and performing topic modeling on those combined texts. By doing so, each text is long enough to use traditional LDA-based topic modeling. Apparently this worked very well for the analysis of Reddit posts.
 
