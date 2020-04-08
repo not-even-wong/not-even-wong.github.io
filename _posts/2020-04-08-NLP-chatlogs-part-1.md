@@ -7,8 +7,6 @@ thumbnail: https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.
 
 <p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20200408/20200408_thumb.jpg" style="width: 300px" class="border"></p>
 
-<div class="fineprint">Images and tables are generally scrollable if not displayed in full.</div>
-
 I haven't made any new posts for several months. That's in part because things were getting busy. Other than my regular workload, I had the opportunity to work with a company that runs an online university course on <a href="https://en.unesco.org/themes/futures-literacy" target="_blank">Futures Literacy</a>. I spent the past few months developing, refining, and implementing online interaction methods and content delivery, and designing assessment and evaluation tools for the course. Now that the course is coming to an end, I'm shifting more towards data analysis using student work during the course.
 
 I want to write about what I'm doing, but it's tricky because of privacy and data protection. Most likely it'll be ok to discuss my approaches and their limitations, and show some of the aggregated results, but I can't show any specific posts, and especially can't reveal any personal information. I'm worried about displaying code also, because it might show some specific info, but I might consider uploading the code with things like stopwords blanked out.
@@ -27,7 +25,7 @@ My objective was to find some way to characterise the discussion: what are the s
 
 <b><u>Characterising the discussion</u></b>
 
-However, using chatlog data poses a challenge. Each text is usually roughly 1-2 sentences long:
+Using this chatlog data posed a significant challenge. Each message is usually roughly 1-2 sentences long:
 
 <p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20200408/1%20post%20length.png" class="border"><br><div class="fineprint">Each bin has a width of approximately 10</div></p>
 
@@ -91,7 +89,6 @@ Using this method and performing LDA topic modeling with gensim, I did manage to
 
 In the end, I settled on 8 topics:
 
-<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
 <table class="table table-bordered table-hover table-condensed">
 <thead><tr><th title="Field #1">Topic</th>
 <th title="Field #2">Label</th>
@@ -138,7 +135,6 @@ In the end, I settled on 8 topics:
 <td>Learn, educ(ation), epidem(ic), everyon(e), MOOC, assign, week, familiar, commerci(al), opinion, cover</td>
 </tr>
 </tbody></table>
-</div>
 
 Do note that the topic labeling was informed by my experience working on the content: the scriptwriting process, as well as observing or facilitating each session, allowed me to recognise exactly which aspects of the discussion these topics come from. To verify these topics, I viewed the top weighted messages for each topic, and found that they indeed were discussing that topic.
 
