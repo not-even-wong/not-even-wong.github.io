@@ -140,7 +140,7 @@ In the end, I settled on 8 topics:
 
 Do note that the topic labeling was informed by my experience working on the content: the scriptwriting process, as well as observing or facilitating each session, allowed me to recognise exactly which aspects of the discussion these topics come from. To verify these topics, I viewed the top weighted messages for each topic, and found that they indeed were discussing that topic. I can't show messages in general, but just as an example, here's one of my own messages made as a facilitator:
 
-"It's interesting to note that in all eras, films (and other forms of media) have explored society's fears. Right now, we're worried about tech, so tech apocalypses have featured prominently"
+<p align="center"><i>"It's interesting to note that in all eras, films (and other forms of media) have explored society's fears. Right now, we're worried about tech, so tech apocalypses have featured prominently"</i></p>
 
 and this particular message has the following scores:
 
