@@ -29,9 +29,7 @@ My objective was to find some way to characterise the discussion: what are the s
 
 However, using chatlog data poses a challenge. Each text is usually roughly 1-2 sentences long:
 
-<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20200408/1%20post%20length.png" class="border"></p>
-
-<p align="center"><div class="fineprint">Each bin has a width of approximately 10</div></p>
+<p align="center"><img src="https://raw.githubusercontent.com/not-even-wong/not-even-wong.github.io/master/_posts/20200408/1%20post%20length.png" class="border"><br><div class="fineprint">Each bin has a width of approximately 10</div></p>
 
 Slightly less than half of all messages have less than 20 words, and approximately 5/6 of all messages have less than 40 words. Also, in general the longer posts are from facilitators (and copied from the script), and I'm more interested in what the participants are saying. In fact, I'm guilty of making the longest few posts... being verbose is one of my primary flaws.
 
