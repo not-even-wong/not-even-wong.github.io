@@ -80,5 +80,67 @@ The other thing I tried with word vectors was to attempt to find cosine similari
 
 However, I realised that the online content was mostly delivered through videos, with some introductory texts linking the videos together. I tried this with the introductory text anyway, and found no meaningful relationship between the discussions and introductory texts, which was to be expected.
 
+<b><u>What I did in the end</u></b>
 
+Eventually, while discussing this project with a friend who worked on analysing Reddit posts, that friend recommended concatenating messages made by the same user and performing topic modeling on those combined texts. By doing so, each text is long enough to use traditional LDA-based topic modeling. Apparently this worked very well for the analysis of Reddit posts.
 
+Using this method and performing LDA topic modeling with gensim, I did manage to capture quite meaningful topics from the discussion. Then, using the topics <i>obtained by analysing concatenated messages</i>, I applied the model to each individual message to get the topic weights for each message, hence bypassing the problem of not being able to obtain meaningful topics from short texts while still being able to characterise these short texts.
+
+In the end, I settled on 8 topics:
+
+<div style="height: 400px; width: 100%; border: 1px solid #ccc; overflow:scroll; overflow-x: hidden;">
+<table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Topic</th>
+<th title="Field #2">Label</th>
+<th title="Field #3">Top words</th>
+</tr></thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Automation of work</td>
+<td>AI, work, increas(e), job, think, robot, drug, worker, human, replac(e), incom(e)</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Futures literacy</td>
+<td>Technolog(y), futur(e), understand, human, societ(y), think, chang(e), world, develop, live, AI</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Access to online learning</td>
+<td>Onlin(e), learn, univers(e), think, student, access, peopl(e), educ(ation), lectur(e), degre(e), teach</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Meaningful work</td>
+<td>Work, daunt(ing), home, person, UBI &lt;i&gt;(universal basic income)&lt;/i&gt;, meet, peopl(e), contribut(e), paid, excit(e), compan(y)</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Democracy</td>
+<td>Think, peopl(e), media, democrac(y), social, use, polit(ics), view, data, good, govern</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Automation of work</td>
+<td>Job, think, work, human, AI, futur(e), machin(e), excit(e), replac(e), develop, labour</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Facilitator scripts</td>
+<td>Discuss, tell, today, futur(e), week, convers(ation), start, pleas(e), forum, welcom(e), question</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Forced online learning during COVID-19 shutdown</td>
+<td>Learn, educ(ation), epidem(ic), everyon(e), MOOC, assign, week, familiar, commerci(al), opinion, cover</td>
+</tr>
+</tbody></table>
+</div>
+
+Do note that the topic labeling was informed by my experience working on the content: the scriptwriting process, as well as observing or facilitating each session, allowed me to recognise exactly which aspects of the discussion these topics come from. To verify these topics, I viewed the top weighted messages for each topic, and found that they indeed were discussing that topic.
+
+Topics 1 and 6 have a heavy overlap (which can be seen in the pyLDAvis visualisation). However, when I tried reducing the number of topics and changing the random seed, other topics vanished instead of having 1 and 6 merge. While the other topics have some overlap, I feel that they are distinct enough that they should be preserved. Therefore, I left it as 8 topics with 1 and 6 overlapping.
+
+I also noted that these were very general topics. It is especially evident when viewing the top posts for each topic. For example, viewing the top posts about automation of work shows posts discussing it in various contexts or with different opinions, and I do want to be able to obtain data on that. However, increasing the number of topics in gensim simply returned more duplicates of these 7 key topics, so I'd have to use a different method - this will be discussed in a future post!
+
+So far, I've tried using various methods to deal with the short text problem, and in the end, it looks like traditional LDA still worked the best - albeit with a slight variation to the input. Now that I'm able to characterise each short text based on what broad themes it's talking about, I can use that to describe the conversation. However, I'm not done with that analysis - so that'll come in a part 2!
