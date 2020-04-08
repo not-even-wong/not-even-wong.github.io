@@ -87,7 +87,7 @@ However, I realised that the online content was mostly delivered through videos,
 
 Eventually, while discussing this project with a friend who worked on analysing Reddit posts, that friend recommended concatenating messages made by the same user and performing topic modeling on those combined texts. By doing so, each text is long enough to use traditional LDA-based topic modeling. Apparently this worked very well for the analysis of Reddit posts.
 
-Using this method and performing LDA topic modeling with gensim, I did manage to capture quite meaningful topics from the discussion. Then, using the topics <i>obtained by analysing concatenated messages</i>, I applied the model to each individual message to get the topic weights for each message, hence bypassing the problem of not being able to obtain meaningful topics from short texts while still being able to characterise these short texts.
+Using this method and performing LDA topic modeling with gensim, I did manage to capture quite meaningful topics from the concatenated messages, although that also meant reducing my corpus size by approximately an order of 10. Then, using the topics <i>obtained by analysing concatenated messages</i>, I applied the model to each individual message to get the topic weights for each message, hence bypassing the problem of not being able to obtain meaningful topics from short texts while still being able to characterise these short texts.
 
 In the end, I settled on 8 topics:
 
