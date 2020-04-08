@@ -33,7 +33,7 @@ However, using chatlog data poses a challenge. Each text is usually roughly 1-2 
 
 Slightly less than half of all messages have less than 20 words, and approximately 5/6 of all messages have less than 40 words. Also, in general the longer posts are from facilitators (and copied from the script), and I'm more interested in what the participants are saying. In fact, I'm guilty of making the longest few posts... being verbose is one of my primary flaws.
 
-Anyway, this means that standard LDA topic modeling would not apply. LDA (latent dirichlet allocation) assumes that each text may have a collection of topics, and tries to allocate words to topics and topics to texts accordingly. However, with each text being so short, most of them don't actually have a topic (e.g. "I agree!"), and skimming through the rest, they indeed generally only discuss one topic at a time.
+Anyway, this means that standard LDA topic modeling would not apply. LDA (latent dirichlet allocation) assumes that each text may have a collection of topics, and tries to allocate words to topics and topics to texts accordingly. However, with each text being so short, most of them don't actually have a topic (e.g. "I agree!"), and skimming through the rest, most of the messages indeed only discuss one topic at a time.
 
 <b><u>Reviewing the literature on chatlog analysis</u></b>
 
